@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Niko Bo — nikobo.art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+
+  <!--
+  ================================================================
+  MASTER EDIT INDEX — use Ctrl+F with [EDIT: LABEL] to jump to any section
+  ================================================================
+  [EDIT: LANDING-MUSIC-LABEL]       Left half title/label
+  [EDIT: LANDING-HOLISTIC-LABEL]    Right half title/label
+  [EDIT: LANDING-CENTER-NAME]       "NIKO BO" bridging name
+  [EDIT: MUSIC-NAV-LINKS]           Music page nav anchor links
+  [EDIT: MUSIC-HERO-HEADING]        Music hero H1 headline
+  [EDIT: MUSIC-HERO-TAGLINE]        Music hero tagline paragraph
+  [EDIT: MUSIC-HERO-CTAS]           Book + Listen buttons
+  [EDIT: MUSIC-PHOTO]               DJ photo placeholder (swap for <img>)
+  [EDIT: MUSIC-BIO-TEXT]            Full artist bio paragraphs
+  [EDIT: MUSIC-GENRE-TAGS]          Genre pill tags
+  [EDIT: MUSIC-MIX-1]              Ecstatic Journey Vol. I card
+  [EDIT: MUSIC-MIX-2]              Acid Rain Club Set card
+  [EDIT: MUSIC-MIX-3]              Progressive Horizons card
+  [EDIT: MUSIC-MIX-4]              Full On Festival Set card
+  [EDIT: SOUNDCLOUD-LINK]           SoundCloud profile URL (appears 3×)
+  [EDIT: MIXCLOUD-LINK]             Mixcloud profile URL (appears 2×)
+  [EDIT: MUSIC-RIDER-SETUP]         Tech rider: Setup cell
+  [EDIT: MUSIC-RIDER-FORMAT]        Tech rider: Format cell
+  [EDIT: MUSIC-RIDER-SOUND]         Tech rider: Sound cell
+  [EDIT: MUSIC-RIDER-LENGTH]        Tech rider: Set Length cell
+  [EDIT: MUSIC-RIDER-GENRES]        Tech rider: Genres cell
+  [EDIT: MUSIC-RIDER-CONTEXT]       Tech rider: Context cell
+  [EDIT: BOOKING-EMAIL]             booking@nikobo.art
+  [EDIT: MUSIC-SOCIAL-LINKS]        Social links on music booking section
+  [EDIT: HOLISTIC-NAV-LINKS]        Holistic page nav anchor links
+  [EDIT: HOLISTIC-HERO-HEADING]     Holistic hero H1 headline
+  [EDIT: HOLISTIC-HERO-TAGLINE]     Holistic hero tagline/one-liner
+  [EDIT: HOLISTIC-OFFERING-TAGS]    Offering/modality pill tags
+  [EDIT: HOLISTIC-HERO-CTAS]        Hero CTA buttons
+  [EDIT: SERVICE-1]                 Transformational Coaching card
+  [EDIT: SERVICE-2]                 Men's Circle card
+  [EDIT: SERVICE-3]                 Cacao Ceremonies card
+  [EDIT: SERVICE-4]                 Ecstatic Dance card
+  [EDIT: SERVICE-5]                 Yoga & Qigong card
+  [EDIT: SERVICE-6]                 Retreats & Festivals card
+  [EDIT: PHILOSOPHY-1]              Movement item
+  [EDIT: PHILOSOPHY-2]              Music item
+  [EDIT: PHILOSOPHY-3]              Meditation item
+  [EDIT: HOLISTIC-PHOTO]            Holistic photo placeholder (swap for <img>)
+  [EDIT: HOLISTIC-BIO-TEXT]         About Niko bio paragraphs
+  [EDIT: PULL-QUOTE]                Pull quote
+  [EDIT: CREDENTIALS]               Three credential list items
+  [EDIT: EXPERIENCE-1..8]           Eight group experience cards
+  [EDIT: HOLISTIC-EMAIL]            hello@nikobo.art
+  [EDIT: HOLISTIC-SOCIAL-LINKS]     Social links on holistic contact section
+  ================================================================
+  -->
+
+  <style>
+    /* ── Custom Properties ── */
+    :root {
+      --base:           #0a0a0a;
+      --elevated:       #141414;
+      --floating:       #1e1e1e;
+      --border:         rgba(245,240,232,.07);
+      --border-strong:  rgba(245,240,232,.14);
+
+      --text-1:         #f5f0e8;
+      --text-2:         rgba(245,240,232,.58);
+      --text-3:         rgba(245,240,232,.32);
+
+      --music-bg:       #0d0808;
+      --music-accent:   #9b2020;
+      --music-light:    #c53030;
+      --music-glow:     rgba(155,32,32,.22);
+
+      --holistic-bg:    #080c09;
+      --holistic-accent:#5f8a65;
+      --holistic-light: #7aaa80;
+      --holistic-glow:  rgba(95,138,101,.18);
+
+      --font-d: 'Cormorant Garamond', Georgia, serif;
+      --font-b: 'DM Sans', system-ui, sans-serif;
+
+      --ease-spring: cubic-bezier(.34,1.56,.64,1);
+      --ease-out:    cubic-bezier(.16,1,.3,1);
+      --ease-smooth: cubic-bezier(.25,.46,.45,.94);
+    }
+
+    /* ── Reset ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+    body{background:var(--base);color:var(--text-1);font-family:var(--font-b);font-size:1rem;line-height:1.7;overflow-x:hidden}
+    img{display:block;max-width:100%}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:none;background:none;font:inherit;color:inherit}
+    ul{list-style:none}
+
+    /* ── Grain texture overlay ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: .04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 300px;
+      mix-blend-mode: screen;
+    }
+
+    /* ── Page system ── */
+    .page{display:none;min-height:100vh}
+    .page.active{display:block}
+
+    /* ── Scroll reveal ── */
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s var(--ease-out),transform .75s var(--ease-out)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s}
+    .d4{transition-delay:.32s} .d5{transition-delay:.40s} .d6{transition-delay:.48s}
+    .d7{transition-delay:.56s} .d8{transition-delay:.64s}
+
+    /* ── Shared typography ── */
+    .label {
+      font-family: var(--font-b);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .28em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .label--music   { color: var(--music-accent); }
+    .label--holistic{ color: var(--holistic-accent); }
+
+    .display {
+      font-family: var(--font-d);
+      font-weight: 700;
+      line-height: .93;
+      letter-spacing: -.025em;
+    }
+
+    /* ── Shared buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      padding: .8em 1.75em;
+      font-family: var(--font-b);
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform .25s var(--ease-spring), box-shadow .25s, background .2s, color .2s, border-color .2s;
+    }
+    .btn:active{transform:scale(.97)!important}
+    .btn:focus-visible{outline:1px solid var(--text-2);outline-offset:3px}
+
+    .btn-mp { background:var(--music-accent); color:var(--text-1); border-color:var(--music-accent); box-shadow:0 4px 24px var(--music-glow); }
+    .btn-mp:hover { background:var(--music-light); border-color:var(--music-light); box-shadow:0 6px 36px rgba(197,48,48,.38); transform:translateY(-2px); }
+
+    .btn-mo { background:transparent; color:var(--text-1); border-color:var(--border-strong); }
+    .btn-mo:hover { border-color:var(--music-accent); color:var(--music-light); transform:translateY(-2px); }
+
+    .btn-hp { background:var(--holistic-accent); color:var(--base); border-color:var(--holistic-accent); box-shadow:0 4px 24px var(--holistic-glow); }
+    .btn-hp:hover { background:var(--holistic-light); border-color:var(--holistic-light); box-shadow:0 6px 36px rgba(122,170,128,.3); transform:translateY(-2px); }
+
+    .btn-ho { background:transparent; color:var(--text-1); border-color:var(--border-strong); }
+    .btn-ho:hover { border-color:var(--holistic-accent); color:var(--holistic-light); transform:translateY(-2px); }
+
+    /* ── Shared sticky nav ── */
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1rem, 4vw, 2.5rem);
+      background: rgba(10,10,10,.9);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-left{display:flex;align-items:center;gap:1.25rem}
+    .nav-logo{font-family:var(--font-d);font-size:1.15rem;font-weight:300;letter-spacing:.35em;text-transform:uppercase;color:var(--text-2)}
+
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      padding: .35em .75em;
+      border: 1px solid transparent;
+      transition: color .2s, border-color .2s;
+    }
+    .nav-back:hover{color:var(--text-1);border-color:var(--border-strong)}
+    .nav-back:focus-visible{outline:1px solid var(--text-2);outline-offset:2px}
+    .nav-back:active{opacity:.7}
+    .nav-back svg{width:11px;height:11px;flex-shrink:0}
+
+    .nav-links{display:flex;align-items:center;gap:2rem}
+    .nav-links a{font-size:.65rem;font-weight:400;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);transition:color .2s}
+    .nav-links a:hover{color:var(--text-1)}
+    .nav-links a:focus-visible{outline:1px solid var(--text-2);outline-offset:3px}
+    .site-nav--music .nav-links a:hover  { color: var(--music-light); }
+    .site-nav--holistic .nav-links a:hover { color: var(--holistic-light); }
+
+    .nav-burger{display:none;flex-direction:column;gap:5px;padding:4px}
+    .nav-burger span{display:block;width:20px;height:1.5px;background:var(--text-2);transition:transform .3s,opacity .3s}
+
+    /* ── Shared photo placeholder ── */
+    .photo-wrap {
+      aspect-ratio: 3/4;
+      background: var(--floating);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    .photo-wrap::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,.025) 0%,transparent 55%)}
+    .photo-initials{font-family:var(--font-d);font-size:5.5rem;font-weight:300;color:var(--text-3);letter-spacing:.08em;line-height:1}
+    .photo-caption{font-size:.55rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-3);margin-top:.75rem}
+    .photo-wrap--music   { box-shadow: inset 0 0 80px rgba(155,32,32,.07); }
+    .photo-wrap--holistic{ box-shadow: inset 0 0 80px rgba(95,138,101,.07); }
+
+    /* ── Shared footer ── */
+    .site-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;padding:1.75rem clamp(1rem,4vw,2.5rem);border-top:1px solid var(--border)}
+    .footer-name{font-family:var(--font-d);font-size:.95rem;font-weight:300;letter-spacing:.3em;text-transform:uppercase;color:var(--text-3)}
+    .footer-copy{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-3)}
+
+    /* ── Social links ── */
+    .socials{display:flex;justify-content:center;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
+    .social-pill{font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);padding:.45em 1em;border:1px solid var(--border);transition:color .2s,border-color .2s}
+    .social-pill:hover{color:var(--text-1);border-color:var(--border-strong)}
+    .social-pill:focus-visible{outline:1px solid var(--text-2);outline-offset:2px}
+    .social-pill:active{opacity:.7}
+
+    /* ── Shared section container ── */
+    .container{max-width:1200px;margin:0 auto;padding:0 clamp(1rem,4vw,2.5rem)}
+    .section-head{margin-bottom:clamp(2.5rem,5vw,4rem)}
+
+    /* ================================================================
+       LANDING PAGE
+    ================================================================ */
+    #landing {
+      height: 100vh;
+      overflow: hidden;
+    }
+    #landing.active {
+      display: flex;
+    }
+
+    .split {
+      position: relative;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: flex .65s var(--ease-out);
+      overflow: hidden;
+    }
+    .split::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      opacity:0;
+      transition:opacity .45s var(--ease-smooth);
+    }
+    .split--music { background: var(--music-bg); }
+    .split--music::before { background: radial-gradient(ellipse at 35% 55%, rgba(155,32,32,.22) 0%, transparent 65%); }
+    .split--holistic { background: var(--holistic-bg); }
+    .split--holistic::before { background: radial-gradient(ellipse at 65% 45%, rgba(95,138,101,.18) 0%, transparent 65%); }
+
+    #landing:has(.split--music:hover)    .split--music    { flex: 1.45; }
+    #landing:has(.split--music:hover)    .split--holistic { flex: 0.55; }
+    #landing:has(.split--holistic:hover) .split--holistic { flex: 1.45; }
+    #landing:has(.split--holistic:hover) .split--music    { flex: 0.55; }
+    .split:hover::before { opacity: 1; }
+
+    .split-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 2rem;
+      transition: transform .5s var(--ease-out);
+    }
+    .split:hover .split-inner { transform: translateY(-6px); }
+
+    .split-eyebrow {
+      font-family: var(--font-b);
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 1.25rem;
+      transition: color .35s;
+    }
+    .split--music:hover   .split-eyebrow { color: var(--music-accent); }
+    .split--holistic:hover .split-eyebrow { color: var(--holistic-accent); }
+
+    .split-title {
+      font-family: var(--font-d);
+      font-size: clamp(3.5rem,9.5vw,9rem);
+      font-weight: 700;
+      line-height: .9;
+      letter-spacing: -.03em;
+      color: var(--text-1);
+    }
+    .split--music .split-title em    { color: var(--music-light); font-style: normal; }
+    .split--holistic .split-title em { color: var(--holistic-light); font-style: normal; }
+
+    .split-cta {
+      margin-top: 1.5rem;
+      font-family: var(--font-b);
+      font-size: .65rem;
+      font-weight: 400;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .35s, transform .35s var(--ease-out), color .35s;
+      color: var(--text-2);
+    }
+    .split:hover .split-cta { opacity: 1; transform: translateY(0); }
+    .split--music:hover   .split-cta { color: var(--music-light); }
+    .split--holistic:hover .split-cta { color: var(--holistic-light); }
+
+    /* Vertical divider */
+    .split-divider {
+      position: absolute;
+      left: 50%;
+      top: 10%;
+      bottom: 10%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--border-strong) 30%, var(--border-strong) 70%, transparent);
+      transform: translateX(-50%);
+      z-index: 10;
+      pointer-events: none;
+      transition: opacity .5s;
+    }
+    #landing:has(.split:hover) .split-divider { opacity: .4; }
+
+    /* [EDIT: LANDING-CENTER-NAME] */
+    .landing-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem clamp(1.5rem,4vw,3rem);
+      pointer-events: none;
+    }
+    .landing-name {
+      font-family: var(--font-d);
+      font-size: clamp(.85rem,1.4vw,1.1rem);
+      font-weight: 300;
+      letter-spacing: .5em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .landing-url {
+      font-family: var(--font-b);
+      font-size: .58rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    /* ================================================================
+       MUSIC PAGE — HERO
+    ================================================================ */
+    .music-hero {
+      min-height: 91vh;
+      display: flex;
+      align-items: center;
+      background: var(--music-bg);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(5rem,12vw,9rem) clamp(1rem,4vw,2.5rem) clamp(3rem,6vw,5rem);
+    }
+    .music-hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse at 12% 45%, rgba(155,32,32,.2) 0%, transparent 52%),
+        radial-gradient(ellipse at 88% 75%, rgba(155,32,32,.07) 0%, transparent 48%);
+    }
+    .music-hero-inner { position:relative; z-index:2; max-width:1200px; width:100%; margin:0 auto; }
+    .music-hero-portrait {
+      position: absolute;
+      right: -4%;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 115%;
+      will-change: transform;
+      width: auto;
+      object-fit: cover;
+      mix-blend-mode: screen;
+      opacity: .72;
+      mask-image: linear-gradient(to left, rgba(0,0,0,.85) 40%, transparent 100%),
+                  linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15% 85%, transparent 100%);
+      mask-composite: intersect;
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,.85) 40%, transparent 100%),
+                          linear-gradient(to bottom, transparent 0%, rgba(0,0,0,1) 15% 85%, transparent 100%);
+      -webkit-mask-composite: destination-in;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .hero-eyebrow::after { content:''; width:60px; height:1px; background:currentColor; opacity:.35; }
+
+    /* [EDIT: MUSIC-HERO-HEADING] */
+    .music-hero-h1 {
+      font-size: clamp(3.2rem,9.5vw,9rem);
+      color: var(--text-1);
+      max-width: 14ch;
+      margin-bottom: 1.5rem;
+    }
+    .music-hero-h1 em { font-style: italic; color: var(--music-light); }
+
+    /* [EDIT: MUSIC-HERO-TAGLINE] */
+    .music-hero-tag {
+      font-size: clamp(.95rem,1.8vw,1.2rem);
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 52ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.65;
+    }
+
+    /* [EDIT: MUSIC-HERO-CTAS] */
+    .cta-row { display:flex; gap:.75rem; flex-wrap:wrap; }
+
+    /* ================================================================
+       MUSIC — BIO
+    ================================================================ */
+    .music-bio { padding: clamp(4rem,9vw,7rem) 0; background: linear-gradient(180deg, var(--music-bg) 0%, var(--elevated) 100%); }
+    .bio-grid  { display:grid; grid-template-columns:1fr 1.55fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+
+    .bio-text-block { margin-bottom: 1.1rem; }
+    .bio-text-block p { font-size: .975rem; color: var(--text-2); line-height: 1.78; }
+
+    .tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-top:1.5rem; }
+    .tag {
+      font-size: .6rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .38em .85em;
+      border: 1px solid var(--border-strong);
+      color: var(--text-3);
+      transition: color .2s, border-color .2s;
+    }
+    .tag--music:hover { color: var(--music-light); border-color: var(--music-accent); }
+    .tag--holistic:hover { color: var(--holistic-light); border-color: var(--holistic-accent); }
+
+    /* ================================================================
+       MUSIC — MIXES
+    ================================================================ */
+    .music-mixes { padding: clamp(4rem,9vw,7rem) 0; background: var(--base); }
+
+    /* Photo strip */
+    .music-photo-strip {
+      width: 100%;
+      height: clamp(50vh, 62vw, 75vh);
+      position: relative;
+      overflow: hidden;
+    }
+    .music-photo-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
+    }
+    .music-photo-strip::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+        var(--base) 0%,
+        transparent 20%,
+        transparent 78%,
+        var(--base) 100%);
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Press photos grid */
+    .music-press { padding: clamp(4rem,9vw,7rem) 0; background: var(--base); }
+    .press-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 900px) {
+      .press-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+    }
+    .press-photo {
+      aspect-ratio: 2/3;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--elevated);
+      position: relative;
+    }
+    .press-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform .5s cubic-bezier(.25,.46,.45,.94);
+    }
+    .press-photo:hover img { transform: scale(1.05); }
+    .press-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: .5rem;
+      color: var(--text-3);
+    }
+    .press-photo-placeholder svg { opacity: .3; }
+    .press-photo-placeholder span { font-size: .65rem; letter-spacing: .12em; text-transform: uppercase; opacity: .5; }
+    .press-download {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .68rem;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .press-download:hover { color: var(--music-light); }
+
+    .mixes-groups { display:flex; flex-direction:column; align-items:center; gap:4rem; }
+    .mix-group { width:100%; max-width:540px; }
+    .mixes-grid { display:grid; grid-template-columns:1fr; gap:1rem; margin-top:1.5rem; }
+
+    .mix-group-label {
+      padding: 0 0 1rem;
+      background: transparent;
+      border: none;
+      font-family: var(--font-d);
+      font-size: clamp(2rem,4vw,3.2rem);
+      font-weight: 600;
+      letter-spacing: -.02em;
+      line-height: 1;
+      color: var(--text-1);
+    }
+    .mix-group-label::after { display: none; }
+
+    .ed-details { margin: .75rem 0 0; }
+    .ed-details[open] .ed-summary { color: var(--text-2); }
+    .ed-summary {
+      list-style: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--font-b);
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      cursor: pointer;
+      user-select: none;
+      transition: color .2s;
+    }
+    .ed-summary::-webkit-details-marker { display: none; }
+    .ed-summary::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translate(-2px, -2px);
+      transition: transform .25s cubic-bezier(.25,.46,.45,.94);
+      flex-shrink: 0;
+    }
+    .ed-details[open] .ed-summary::after {
+      transform: rotate(-135deg) translate(-2px, -2px);
+    }
+    .ed-summary:hover { color: var(--text-2); }
+    .ed-body {
+      font-family: var(--font-b);
+      font-size: .95rem;
+      line-height: 1.75;
+      color: var(--text-2);
+      margin: 1rem 0 0;
+      padding-top: .25rem;
+    }
+
+    @media (min-width: 900px) {
+      .mix-group { max-width: 1120px; }
+      .mixes-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    }
+
+    .mix-card {
+      background: var(--elevated);
+      border: 1px solid var(--border);
+      padding: clamp(1.5rem,3vw,2.25rem);
+      position: relative;
+      transition: background .25s;
+    }
+    .mix-card:hover { background: var(--floating); }
+
+    .mix-card-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .mix-num  { font-family:var(--font-d); font-size:1.1rem; font-weight:300; color:var(--text-3); line-height:1; flex-shrink:0; }
+    .mix-type { font-size:.58rem; font-weight:500; letter-spacing:.2em; text-transform:uppercase; color:var(--music-accent); }
+    .mix-title{ font-family:var(--font-d); font-size:clamp(1.4rem,2.5vw,1.9rem); font-weight:600; line-height:1.05; margin-bottom:1.1rem; }
+
+    .mix-embed { margin-bottom: 1rem; }
+    .mix-embed iframe {
+      display: block;
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    .mix-sc-attr {
+      margin-top: .4rem;
+      font-size: .6rem !important;
+      font-family: var(--font-b) !important;
+      color: var(--text-3) !important;
+      line-break: auto !important;
+      white-space: normal !important;
+      overflow: visible !important;
+      text-overflow: unset !important;
+    }
+    .mix-sc-attr a { color: var(--text-3) !important; text-decoration: none !important; transition: color .2s; }
+    .mix-sc-attr a:hover { color: var(--text-2) !important; }
+    .mix-placeholder {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed var(--border-strong);
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+
+    .mix-desc { font-size:.875rem; color:var(--text-2); line-height:1.68; }
+
+
+    /* ================================================================
+       MUSIC — TECH RIDER
+    ================================================================ */
+    .music-rider { padding: clamp(4rem,9vw,7rem) 0; background: var(--music-bg); border-top:1px solid var(--border); }
+
+    .rider-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      margin-top: clamp(2.5rem,5vw,3.5rem);
+    }
+    .rider-cell { background:var(--elevated); padding:clamp(1.25rem,3vw,1.75rem); transition:background .2s; }
+    .rider-cell:hover { background:var(--floating); }
+    .rider-icon  { font-size:1.3rem; margin-bottom:.85rem; opacity:.65; }
+    .rider-label { font-size:.6rem; font-weight:500; letter-spacing:.22em; text-transform:uppercase; color:var(--music-accent); margin-bottom:.45rem; }
+    .rider-val   { font-size:.875rem; color:var(--text-2); line-height:1.62; }
+
+    /* ================================================================
+       MUSIC — BOOKING
+    ================================================================ */
+    .music-booking { padding: clamp(5rem,10vw,8rem) 0; background:var(--base); border-top:1px solid var(--border); text-align:center; }
+    .booking-inner { max-width:580px; margin:0 auto; padding:0 clamp(1rem,4vw,2.5rem); }
+
+    .booking-h2  { font-size:clamp(2.5rem,7vw,5.5rem); margin:.5rem 0 1rem; }
+    .booking-sub { font-size:.95rem; color:var(--text-2); font-weight:300; margin-bottom:2rem; }
+
+    .booking-email {
+      font-family:var(--font-d);
+      font-size:clamp(1.25rem,3.5vw,2.25rem);
+      color:var(--music-light);
+      display:block;
+      margin-bottom:2rem;
+      letter-spacing:-.01em;
+      transition:color .2s;
+    }
+    .booking-email:hover { color:var(--text-1); }
+    .booking-email:focus-visible{outline:1px solid var(--music-accent);outline-offset:3px}
+
+    /* ================================================================
+       HOLISTIC — HERO
+    ================================================================ */
+    .holistic-hero {
+      min-height: 91vh;
+      display: flex;
+      align-items: center;
+      background: var(--holistic-bg);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(5rem,12vw,9rem) clamp(1rem,4vw,2.5rem) clamp(3rem,6vw,5rem);
+    }
+    .holistic-hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse at 82% 28%, rgba(95,138,101,.18) 0%, transparent 52%),
+        radial-gradient(ellipse at 18% 78%, rgba(95,138,101,.07) 0%, transparent 48%);
+    }
+    .holistic-hero-inner { position:relative; z-index:2; max-width:1200px; width:100%; margin:0 auto; }
+
+    /* [EDIT: HOLISTIC-HERO-HEADING] */
+    .holistic-hero-h1 {
+      font-size: clamp(2.6rem,7.5vw,7rem);
+      color: var(--text-1);
+      max-width: 22ch;
+      margin-bottom: 1.5rem;
+      font-style: italic;
+      font-weight: 600;
+      line-height: 1.05;
+    }
+
+    /* [EDIT: HOLISTIC-HERO-TAGLINE] */
+    .holistic-hero-tag {
+      font-size: clamp(.95rem,1.8vw,1.2rem);
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 58ch;
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+
+    /* [EDIT: HOLISTIC-OFFERING-TAGS] */
+    .offering-tags { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:2.25rem; }
+    .offering-tag {
+      font-size:.62rem;
+      font-weight:400;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      padding:.38em .85em;
+      border:1px solid rgba(95,138,101,.28);
+      color:var(--holistic-light);
+    }
+
+    /* ================================================================
+       HOLISTIC — SERVICES
+    ================================================================ */
+    .holistic-services { padding: clamp(4rem,9vw,7rem) 0; background: var(--elevated); }
+
+    .services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:clamp(2.5rem,5vw,3.5rem); }
+
+    .service-card {
+      background: var(--base);
+      border: 1px solid var(--border);
+      padding: clamp(1.5rem,3vw,2rem);
+      position: relative;
+      overflow: hidden;
+      transition: border-color .3s, transform .35s var(--ease-spring), box-shadow .35s;
+    }
+    .service-card::after {
+      content:'';
+      position:absolute;
+      bottom:0; left:0; right:0;
+      height:2px;
+      background:var(--holistic-accent);
+      transform:scaleX(0);
+      transform-origin:left;
+      transition:transform .45s var(--ease-out);
+    }
+    .service-card:hover { border-color:rgba(95,138,101,.28); transform:translateY(-5px); box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 24px var(--holistic-glow); }
+    .service-card:hover::after { transform:scaleX(1); }
+
+    .svc-num   { font-family:var(--font-d); font-size:2.75rem; font-weight:300; color:var(--border-strong); line-height:1; margin-bottom:.75rem; }
+    .svc-title { font-family:var(--font-d); font-size:1.45rem; font-weight:600; margin-bottom:.7rem; }
+    .svc-desc  { font-size:.875rem; color:var(--text-2); line-height:1.65; }
+
+    /* ================================================================
+       HOLISTIC — PHILOSOPHY
+    ================================================================ */
+    .holistic-philosophy {
+      padding: clamp(4rem,9vw,7rem) 0;
+      background: var(--holistic-bg);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+    }
+    .philosophy-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(2rem,5vw,4rem); margin-top:clamp(2.5rem,5vw,3.5rem); }
+
+    .phil-num   { font-family:var(--font-d); font-size:4.5rem; font-weight:300; color:rgba(95,138,101,.15); line-height:1; margin-bottom:.85rem; }
+    .phil-title { font-family:var(--font-d); font-size:1.9rem; font-weight:600; margin-bottom:.75rem; }
+    .phil-text  { font-size:.9rem; color:var(--text-2); line-height:1.72; }
+
+    /* ================================================================
+       HOLISTIC — ABOUT
+    ================================================================ */
+    .holistic-about { padding: clamp(4rem,9vw,7rem) 0; background: var(--base); }
+    .about-grid { display:grid; grid-template-columns:1.6fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; }
+
+    .pull-quote {
+      font-family: var(--font-d);
+      font-size: clamp(1.4rem,2.8vw,2.1rem);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--holistic-light);
+      line-height: 1.45;
+      padding-left: 1.5rem;
+      border-left: 2px solid var(--holistic-accent);
+      margin: 1.75rem 0;
+    }
+
+    .credentials { margin-top:1.25rem; }
+    .credentials li {
+      display:flex; align-items:center; gap:.75rem;
+      font-size:.82rem; color:var(--text-3);
+      padding:.55em 0;
+      border-bottom:1px solid var(--border);
+    }
+    .credentials li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--holistic-accent); flex-shrink:0; }
+
+    /* ================================================================
+       HOLISTIC — GROUP EXPERIENCES
+    ================================================================ */
+    .holistic-experiences { padding: clamp(4rem,9vw,7rem) 0; background: var(--elevated); }
+
+    .exp-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:.75rem; margin-top:clamp(2.5rem,5vw,3.5rem); }
+
+    .exp-card {
+      background: var(--base);
+      border: 1px solid var(--border);
+      padding: 1.35rem 1rem;
+      text-align: center;
+      transition: border-color .3s, transform .35s var(--ease-spring);
+    }
+    .exp-card:hover { border-color:rgba(95,138,101,.3); transform:translateY(-3px); }
+    .exp-title { font-family:var(--font-d); font-size:1.15rem; font-weight:600; margin-bottom:.25rem; }
+    .exp-freq  { font-size:.58rem; font-weight:500; letter-spacing:.18em; text-transform:uppercase; color:var(--holistic-accent); }
+
+    /* ================================================================
+       HOLISTIC — CONTACT
+    ================================================================ */
+    .holistic-contact { padding: clamp(5rem,10vw,8rem) 0; background:var(--holistic-bg); border-top:1px solid var(--border); text-align:center; }
+    .holistic-contact-inner { max-width:580px; margin:0 auto; padding:0 clamp(1rem,4vw,2.5rem); }
+
+    .holistic-email {
+      font-family:var(--font-d);
+      font-size:clamp(1.25rem,3.5vw,2.25rem);
+      color:var(--holistic-light);
+      display:block;
+      margin-bottom:2rem;
+      letter-spacing:-.01em;
+      transition:color .2s;
+    }
+    .holistic-email:hover { color:var(--text-1); }
+    .holistic-email:focus-visible{outline:1px solid var(--holistic-accent);outline-offset:3px}
+
+    /* ================================================================
+       RESPONSIVE
+    ================================================================ */
+    @media (max-width: 900px) {
+      #landing.active { flex-direction: column; }
+      .landing-header { padding: 1.25rem 1.5rem; }
+
+      .split-divider {
+        top: 50%; bottom: auto;
+        left: 10%; right: 10%;
+        width: auto; height: 1px;
+        transform: translateY(-50%);
+        background: linear-gradient(90deg, transparent, var(--border-strong) 30%, var(--border-strong) 70%, transparent);
+      }
+
+      #landing:has(.split--music:hover)    .split--music    { flex: 1.35; }
+      #landing:has(.split--music:hover)    .split--holistic { flex: 0.65; }
+      #landing:has(.split--holistic:hover) .split--holistic { flex: 1.35; }
+      #landing:has(.split--holistic:hover) .split--music    { flex: 0.65; }
+
+      .bio-grid   { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; }
+      .photo-wrap { max-height: 420px; }
+
+      .rider-grid     { grid-template-columns: repeat(2,1fr); }
+      .services-grid  { grid-template-columns: repeat(2,1fr); }
+      .philosophy-grid{ grid-template-columns: 1fr; }
+      .exp-grid       { grid-template-columns: repeat(2,1fr); }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 58px; left: 0; right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--elevated);
+        border-bottom: 1px solid var(--border);
+        padding: .5rem 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: .65rem clamp(1rem,4vw,2.5rem); width:100%; }
+      .nav-burger { display: flex; }
+    }
+
+    @media (max-width: 560px) {
+      .rider-grid    { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .split-title   { font-size: clamp(2.8rem,13vw,4.5rem); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================================
+     LANDING — Split Entry Page
+================================================================ -->
+<section id="landing" class="page active" role="main">
+
+  <!-- [EDIT: LANDING-MUSIC-LABEL] -->
+  <div class="split split--music"
+       role="button" tabindex="0"
+       aria-label="Enter the Music and DJ world"
+       onclick="showPage('music')"
+       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('music')}">
+    <div class="split-inner">
+      <div class="split-eyebrow">DJ · Producer</div>
+      <div class="split-title">
+        <em>Music</em>
+      </div>
+      <div class="split-cta">Enter →</div>
+    </div>
+  </div>
+
+  <div class="split-divider" aria-hidden="true"></div>
+
+  <!-- [EDIT: LANDING-CENTER-NAME] -->
+  <header class="landing-header" aria-hidden="true">
+    <div class="landing-name">Niko Bo</div>
+    <div class="landing-url">nikobo.art</div>
+  </header>
+
+  <!-- [EDIT: LANDING-HOLISTIC-LABEL] -->
+  <div class="split split--holistic"
+       role="button" tabindex="0"
+       aria-label="Enter the Holistic Coaching world"
+       onclick="showPage('holistic')"
+       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('holistic')}">
+    <div class="split-inner">
+      <div class="split-eyebrow">Coach · Facilitator</div>
+      <div class="split-title">
+        <em>Coaching</em>
+      </div>
+      <div class="split-cta">Enter →</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================================================================
+     MUSIC PAGE
+================================================================ -->
+<section id="music" class="page" aria-label="Music and DJ Press Kit">
+
+  <!-- [EDIT: MUSIC-NAV-LINKS] -->
+  <nav class="site-nav site-nav--music" aria-label="Music page navigation">
+    <div class="nav-left">
+      <button class="nav-back" onclick="showPage('landing')" aria-label="Back to home">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M8 1L3 6L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Home
+      </button>
+      <span class="nav-logo">Niko Bo <span style="color:var(--music-accent);font-weight:500">MUSIC</span></span>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleBurger(this,'music-nav')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="music-nav" role="list">
+      <li><a href="#m-bio" onclick="closeBurger()">Bio</a></li>
+      <li><a href="#m-mixes" onclick="closeBurger()">Mixes</a></li>
+      <li><a href="#m-tracks" onclick="closeBurger()">Original Music</a></li>
+      <li><a href="#m-press" onclick="closeBurger()">Photos</a></li>
+      <li><a href="#m-rider" onclick="closeBurger()">Tech Rider</a></li>
+      <li><a href="#m-booking" onclick="closeBurger()">Booking</a></li>
+    </ul>
+  </nav>
+
+  <!-- MUSIC: Hero -->
+  <section class="music-hero" id="m-hero" aria-labelledby="m-hero-h1">
+    <img src="brand_assets/Close Up.png" alt="" class="music-hero-portrait" aria-hidden="true">
+    <div class="music-hero-inner">
+      <!-- [EDIT: MUSIC-HERO-HEADING] -->
+      <h1 class="display music-hero-h1 reveal d1" id="m-hero-h1">
+        Raw Energy.<br><em>Intentional</em><br>Journeys.
+      </h1>
+      <!-- [EDIT: MUSIC-HERO-CTAS] -->
+      <div class="cta-row reveal d3">
+        <a href="#m-booking" class="btn btn-mp">Book Niko</a>
+        <a href="#m-mixes" class="btn btn-mo">Listen to Mixes</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Artist Bio -->
+  <section class="music-bio" id="m-bio" aria-labelledby="m-bio-h2">
+    <div class="container">
+      <div class="bio-grid">
+
+        <!-- [EDIT: MUSIC-PHOTO] -->
+        <img src="brand_assets/smile grainy.png"
+             alt="Niko Bo at the decks"
+             class="reveal"
+             style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center top;display:block;border:1px solid var(--border)">
+
+        <div>
+          <div class="reveal">
+            <p class="label label--music">Artist</p>
+            <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin:.5rem 0 1.5rem" id="m-bio-h2">Niko Bo</h2>
+          </div>
+
+          <!-- [EDIT: MUSIC-BIO-TEXT] -->
+          <div class="bio-text-block reveal d1"><p>Niko Bo is a DJ and producer operating in two distinct but complementary worlds: the raw, driving energy of techno and psytrance for clubs and festivals, and the intentional, arc-driven sound of ecstatic dance for conscious gatherings.</p></div>
+          <div class="bio-text-block reveal d2"><p>On the harder side, Niko plays techno — acid, bounce, peak, hard dance and neo rave — and psytrance in both progressive and full-on flavors. His club and festival sets are built for dancefloors that want to go deep and go hard: layered, hypnotic, relentless in the best possible way.</p></div>
+          <div class="bio-text-block reveal d3"><p>At ecstatic dance events, the palette shifts entirely. Niko crafts intentional journeys through genre, vibe and emotion — moving through organic and downtempo openings, rising through tribal house, latin house and progressive house, accelerating into psytrance, drum &amp; bass and peak-hour intensity, before landing softly with medicine music and mantra-infused closes. Each set has a clear, intense climax and a carefully held arc.</p></div>
+          <div class="bio-text-block reveal d4"><p>In the studio, Niko writes and produces original music that reflects both sides of his world — the driving pulse of techno and psytrance alongside the organic textures of medicine music and downtempo. His productions live in the space between the club and the ceremony.</p></div>
+
+
+          <!-- [EDIT: MUSIC-GENRE-TAGS] -->
+          <div class="tags reveal d6" aria-label="Genres">
+            <span class="tag tag--music">Techno</span>
+            <span class="tag tag--music">Acid</span>
+            <span class="tag tag--music">Bounce</span>
+            <span class="tag tag--music">Hard Dance</span>
+            <span class="tag tag--music">Neo Rave</span>
+            <span class="tag tag--music">Psytrance</span>
+            <span class="tag tag--music">Progressive</span>
+            <span class="tag tag--music">Full On</span>
+            <span class="tag tag--music">Ecstatic Dance</span>
+            <span class="tag tag--music">Downtempo</span>
+            <span class="tag tag--music">Medicine Music</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Photo Strip -->
+  <div class="music-photo-strip">
+    <img src="brand_assets/min-3 (1).jpg" alt="Niko Bo performing live" loading="lazy">
+  </div>
+
+  <!-- MUSIC: Mixes & Recordings -->
+  <section class="music-mixes" id="m-mixes" aria-labelledby="m-mixes-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--music">Listen</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="m-mixes-h2">Mixes &amp; Recordings</h2>
+      </div>
+
+      <!-- HOW TO ADD EMBEDS: SoundCloud → Share → Embed → copy the src="…" from the iframe → paste below replacing PASTE_SOUNDCLOUD_URL_HERE -->
+      <div class="mixes-groups">
+
+        <!-- ── Club & Festival ── -->
+        <div class="mix-group reveal">
+          <h3 class="mix-group-label">Club &amp; Festival</h3>
+          <div class="mixes-grid">
+
+            <!-- [EDIT: MUSIC-MIX-2] -->
+            <article class="mix-card reveal d1">
+              <div class="mix-card-head">
+                <span class="mix-num" aria-hidden="true">01</span>
+                <span class="mix-type">Techno</span>
+              </div>
+              <h4 class="mix-title">High Energy Techno @ OCC Records Podcast (March 2026)</h4>
+              <div class="mix-embed">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2299127639&color=%234b2a27&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                  title="High Energy Techno @ OCC Records Podcast (March 2026)"></iframe>
+                <div class="mix-sc-attr"><a href="https://soundcloud.com/occrecords" target="_blank" rel="noopener">OCC Records</a> · <a href="https://soundcloud.com/occrecords/occ-podcast-191-niko-bo" target="_blank" rel="noopener">OCC Podcast #191 - Niko Bo</a></div>
+              </div>
+            </article>
+
+            <!-- [EDIT: MUSIC-MIX-3] -->
+            <article class="mix-card reveal d2">
+              <div class="mix-card-head">
+                <span class="mix-num" aria-hidden="true">02</span>
+                <span class="mix-type">Full On &amp; Progressive Psytrance</span>
+              </div>
+              <h4 class="mix-title">La Casa del Psy @ Casa de la Luna, Medellín, April 2026</h4>
+              <div class="mix-embed">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2312301338&color=%234b2a27&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                  title="La Casa del Psy, April 2026"></iframe>
+                <div class="mix-sc-attr"><a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener">NIKO BO</a> · <a href="https://soundcloud.com/nikobomusic/psy-04-2026" target="_blank" rel="noopener">Best of Full On Psytrance — La Casa del Psy @ Casa de la Luna, Medellín</a></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ── Ecstatic Dance ── -->
+        <div class="mix-group reveal">
+          <h3 class="mix-group-label">Ecstatic Dance</h3>
+          <details class="ed-details">
+            <summary class="ed-summary">What is Ecstatic Dance?</summary>
+            <p class="ed-body">Ecstatic Dance is a conscious movement gathering without any alcohol or other substances. People can experience ecstasy without taking any drugs. It's all about connection to the self, to the music and to the moment. It includes agreements such as no phones, no talking and no shoes on the dancefloor. Ecstatic dance has been spreading all over the globe in recent years, and Niko Bo has been crucial in the building of the Ecstatic Dance scene in Medellín, Colombia, where he founded and organized the first Medellín Ecstatic Dance Festival in 2025, as well as the event series ECSTASÍA.</p>
+          </details>
+          <div class="mixes-grid">
+
+            <!-- [EDIT: MUSIC-MIX-1] -->
+            <article class="mix-card reveal d1">
+              <div class="mix-card-head">
+                <span class="mix-num" aria-hidden="true">01</span>
+                <span class="mix-type">Medicine · Tribal · Downtempo · Organic House · Psytrance · D&amp;B</span>
+              </div>
+              <h4 class="mix-title">ECSTASÍA — Medellín Ecstatic Dance #10 (April 2026)</h4>
+              <div class="mix-embed">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2309722598&color=%234b2a27&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                  title="ECSTASÍA — Medellín Ecstatic Dance #10 (April 2026)"></iframe>
+                <div class="mix-sc-attr"><a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener">NIKO BO</a> · <a href="https://soundcloud.com/nikobomusic/ecstasia-april-2026" target="_blank" rel="noopener">ECSTASÍA - Medellín Ecstatic Dance #10 - April 2026</a></div>
+              </div>
+            </article>
+
+            <!-- [EDIT: MUSIC-MIX-1B] -->
+            <article class="mix-card reveal d2">
+              <div class="mix-card-head">
+                <span class="mix-num" aria-hidden="true">02</span>
+                <span class="mix-type">Tribal · Oriental · Downtempo · Afro · Progressive House · Psytrance</span>
+              </div>
+              <h4 class="mix-title">ECSTASÍA (August 2025)</h4>
+              <div class="mix-embed">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2158167615&color=%234b2a27&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                  title="ECSTASÍA (August 2025)"></iframe>
+                <div class="mix-sc-attr"><a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener">NIKO BO</a> · <a href="https://soundcloud.com/nikobomusic/ecstasia-august-2025" target="_blank" rel="noopener">ECSTASÍA 8/2025: Ecstatic Dance DJ Set</a></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- More on SoundCloud -->
+        <div class="reveal" style="text-align:right;max-width:540px">
+          <a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener noreferrer"
+             style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);transition:color .2s;display:inline-flex;align-items:center;gap:.4rem"
+             onmouseover="this.style.color='var(--music-light)'" onmouseout="this.style.color='var(--text-3)'">
+            More sets on SoundCloud
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 6H11M11 6L7 2M11 6L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Original Tracks -->
+  <section class="music-mixes" id="m-tracks" aria-labelledby="m-tracks-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--music">Productions</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="m-tracks-h2">Original Music</h2>
+      </div>
+
+      <!-- HOW TO ADD: SoundCloud → Share → Embed → copy the src="…" from the iframe → paste below -->
+      <div class="mixes-groups">
+        <div class="mix-group reveal">
+          <div class="mixes-grid">
+
+            <!-- [EDIT: MUSIC-TRACK-1] -->
+            <article class="mix-card reveal d1">
+              <div class="mix-card-head">
+                <span class="mix-num" aria-hidden="true">01</span>
+                <span class="mix-type">Original Track</span>
+              </div>
+              <h4 class="mix-title">Grosero</h4>
+              <div class="mix-embed">
+                <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2302139603&color=%234b2a27&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+                  title="Grosero"></iframe>
+                <div class="mix-sc-attr"><a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener">NIKO BO</a> · <a href="https://soundcloud.com/nikobomusic/grosero" target="_blank" rel="noopener">Grosero</a></div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div class="reveal" style="text-align:right;max-width:1120px;width:100%">
+          <a href="https://soundcloud.com/nikobomusic" target="_blank" rel="noopener noreferrer"
+             style="font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text-3);transition:color .2s;display:inline-flex;align-items:center;gap:.4rem"
+             onmouseover="this.style.color='var(--music-light)'" onmouseout="this.style.color='var(--text-3)'">
+            More on SoundCloud
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M1 6H11M11 6L7 2M11 6L7 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Press Photos -->
+  <section class="music-press" id="m-press" aria-labelledby="m-press-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--music">Press Kit</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="m-press-h2">Photos</h2>
+      </div>
+
+      <div class="press-grid">
+        <!-- [EDIT: PRESS-PHOTO-1] -->
+        <div class="press-photo reveal d1">
+          <img src="brand_assets/AIV00687.JPG.. (1).png" alt="Niko Bo presenting" loading="lazy" style="object-position:center 35%;transform:scale(1.25);transform-origin:center 35%">
+        </div>
+        <!-- [EDIT: PRESS-PHOTO-2] -->
+        <div class="press-photo reveal d2">
+          <img src="brand_assets/DJ Atman.jpeg" alt="Niko Bo at the decks" loading="lazy" style="object-position:center top">
+        </div>
+        <!-- [EDIT: PRESS-PHOTO-3] -->
+        <div class="press-photo reveal d3">
+          <img src="brand_assets/min-4 (1).jpg" alt="Niko Bo performing live" loading="lazy" style="object-position:center 20%">
+        </div>
+        <!-- [EDIT: PRESS-PHOTO-4] -->
+        <div class="press-photo reveal d4">
+          <img src="brand_assets/Niko DJ.png" alt="Niko Bo DJ set" loading="lazy" style="object-position:center top">
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:2rem">
+        <p style="font-size:.75rem;color:var(--text-3);letter-spacing:.08em">Hi-res files available on request — <a href="#m-booking" style="color:var(--music-light);text-decoration:none">get in touch</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Tech Rider -->
+  <section class="music-rider" id="m-rider" aria-labelledby="m-rider-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--music">Technical</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="m-rider-h2">Tech Rider</h2>
+      </div>
+      <div class="rider-grid" role="list">
+
+        <!-- [EDIT: MUSIC-RIDER-SETUP] -->
+        <div class="rider-cell reveal d1" role="listitem">
+          <div class="rider-icon" aria-hidden="true">⬡</div>
+          <div class="rider-label">Setup</div>
+          <div class="rider-val">2 × CDJ-2000NXS2 + DJM-900NXS2 preferred. Pioneer XDJ-RX or equivalent also welcome. Happy to discuss in advance.</div>
+        </div>
+
+        <!-- [EDIT: MUSIC-RIDER-FORMAT] -->
+        <div class="rider-cell reveal d2" role="listitem">
+          <div class="rider-icon" aria-hidden="true">◈</div>
+          <div class="rider-label">Format</div>
+          <div class="rider-val">USB (rekordbox). Own laptop available as backup.</div>
+        </div>
+
+        <!-- [EDIT: MUSIC-RIDER-SOUND] -->
+        <div class="rider-cell reveal d3" role="listitem">
+          <div class="rider-icon" aria-hidden="true">◎</div>
+          <div class="rider-label">Sound</div>
+          <div class="rider-val">Quality full-range system essential. Sub response is non-negotiable for techno and psytrance sets.</div>
+        </div>
+
+        <!-- [EDIT: MUSIC-RIDER-LENGTH] -->
+        <div class="rider-cell reveal d4" role="listitem">
+          <div class="rider-icon" aria-hidden="true">◷</div>
+          <div class="rider-label">Set Length</div>
+          <div class="rider-val">Club/festival: 1–3 hr. Ecstatic dance: typically 2–3 hr journey arc. Adaptable to lineup needs.</div>
+        </div>
+
+        <!-- [EDIT: MUSIC-RIDER-GENRES] -->
+        <div class="rider-cell reveal d5" role="listitem">
+          <div class="rider-icon" aria-hidden="true">♬</div>
+          <div class="rider-label">Genres</div>
+          <div class="rider-val">Techno (acid, bounce, hard dance, neo rave) · Psytrance (progressive, full on) · Ecstatic Dance (organic → medicine music)</div>
+        </div>
+
+        <!-- [EDIT: MUSIC-RIDER-CONTEXT] -->
+        <div class="rider-cell reveal d6" role="listitem">
+          <div class="rider-icon" aria-hidden="true">◇</div>
+          <div class="rider-label">Context</div>
+          <div class="rider-val">Clubs &amp; festivals · Conscious festivals · Ecstatic dance events · Ceremonial gatherings</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: Booking -->
+  <section class="music-booking" id="m-booking" aria-labelledby="m-booking-h2">
+    <div class="booking-inner">
+      <p class="label label--music reveal">Booking</p>
+      <h2 class="display booking-h2 reveal d1" id="m-booking-h2">Book Niko</h2>
+      <p class="booking-sub reveal d2">For bookings, enquiries and collabs — reach out directly.</p>
+      <!-- [EDIT: BOOKING-EMAIL] -->
+      <a href="mailto:booking@nikobo.art" class="booking-email reveal d3">booking@nikobo.art</a>
+      <!-- [EDIT: MUSIC-SOCIAL-LINKS] -->
+      <div class="socials reveal d4" aria-label="Social media">
+        <a href="https://www.instagram.com/nikobo.art" target="_blank" rel="noopener noreferrer" class="social-pill">Instagram</a>
+        <a href="https://www.facebook.com/yummmniko/" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+        <!-- [EDIT: SOUNDCLOUD-LINK] replace # with real URL -->
+        <a href="#" class="social-pill">SoundCloud</a>
+        <!-- [EDIT: MIXCLOUD-LINK] replace # with real URL -->
+        <a href="#" class="social-pill">Mixcloud</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-name">Niko Bo</span>
+    <span class="footer-copy">© 2025 nikobo.art</span>
+  </footer>
+
+</section>
+
+<!-- ================================================================
+     HOLISTIC COACHING PAGE
+================================================================ -->
+<section id="holistic" class="page" aria-label="Holistic Coaching">
+
+  <!-- [EDIT: HOLISTIC-NAV-LINKS] -->
+  <nav class="site-nav site-nav--holistic" aria-label="Holistic page navigation">
+    <div class="nav-left">
+      <button class="nav-back" onclick="showPage('landing')" aria-label="Back to home">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M8 1L3 6L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Home
+      </button>
+      <span class="nav-logo">Niko Bo</span>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleBurger(this,'holistic-nav')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="holistic-nav" role="list">
+      <li><a href="#h-services" onclick="closeBurger()">Services</a></li>
+      <li><a href="#h-philosophy" onclick="closeBurger()">Philosophy</a></li>
+      <li><a href="#h-about" onclick="closeBurger()">About</a></li>
+      <li><a href="#h-experiences" onclick="closeBurger()">Experiences</a></li>
+      <li><a href="#h-contact" onclick="closeBurger()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HOLISTIC: Hero -->
+  <section class="holistic-hero" id="h-hero" aria-labelledby="h-hero-h1">
+    <div class="holistic-hero-inner">
+      <div class="hero-eyebrow reveal" style="color:var(--holistic-accent)">
+        <span class="label label--holistic">Holistic Coaching</span>
+      </div>
+      <!-- [EDIT: HOLISTIC-HERO-HEADING] -->
+      <h1 class="display holistic-hero-h1 reveal d1" id="h-hero-h1">
+        Get out of your head,<br>into your body,<br>connect to your heart.
+      </h1>
+      <!-- [EDIT: HOLISTIC-HERO-TAGLINE] -->
+      <p class="holistic-hero-tag reveal d2">
+        Transformational coach helping people enjoy a fulfilling life with better health, greater peace of mind and deeper connections.
+      </p>
+      <!-- [EDIT: HOLISTIC-OFFERING-TAGS] -->
+      <div class="offering-tags reveal d3" aria-label="Modalities offered">
+        <span class="offering-tag">Coaching</span>
+        <span class="offering-tag">Yoga</span>
+        <span class="offering-tag">Qigong</span>
+        <span class="offering-tag">Cacao Ceremony</span>
+        <span class="offering-tag">Ecstatic Dance</span>
+        <span class="offering-tag">Meditation</span>
+        <span class="offering-tag">Men's Circle</span>
+        <span class="offering-tag">Retreats</span>
+      </div>
+      <!-- [EDIT: HOLISTIC-HERO-CTAS] -->
+      <div class="cta-row reveal d4">
+        <a href="#h-contact" class="btn btn-hp">Work With Niko</a>
+        <a href="#h-services" class="btn btn-ho">Explore Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: Services -->
+  <section class="holistic-services" id="h-services" aria-labelledby="h-services-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">Offerings</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-services-h2">Services</h2>
+      </div>
+      <div class="services-grid">
+
+        <!-- [EDIT: SERVICE-1] -->
+        <article class="service-card reveal d1">
+          <div class="svc-num" aria-hidden="true">01</div>
+          <h3 class="svc-title">Transformational Coaching</h3>
+          <p class="svc-desc">One-on-one sessions that go beyond goal-setting — exploring depth together for lasting change from the inside out.</p>
+        </article>
+
+        <!-- [EDIT: SERVICE-2] -->
+        <article class="service-card reveal d2">
+          <div class="svc-num" aria-hidden="true">02</div>
+          <h3 class="svc-title">Men's Circle</h3>
+          <p class="svc-desc">A brave space where men come together to share authentically and reconnect with their deeper selves and purpose.</p>
+        </article>
+
+        <!-- [EDIT: SERVICE-3] -->
+        <article class="service-card reveal d3">
+          <div class="svc-num" aria-hidden="true">03</div>
+          <h3 class="svc-title">Cacao Ceremonies</h3>
+          <p class="svc-desc">Sacred plant medicine gatherings with music, movement and meditation — open the heart within a held container.</p>
+        </article>
+
+        <!-- [EDIT: SERVICE-4] -->
+        <article class="service-card reveal d1">
+          <div class="svc-num" aria-hidden="true">04</div>
+          <h3 class="svc-title">Ecstatic Dance</h3>
+          <p class="svc-desc">Free-form, music-guided dance journeys that release stress, unlock joy and move energy through the body.</p>
+        </article>
+
+        <!-- [EDIT: SERVICE-5] -->
+        <article class="service-card reveal d2">
+          <div class="svc-num" aria-hidden="true">05</div>
+          <h3 class="svc-title">Yoga &amp; Qigong</h3>
+          <p class="svc-desc">Body-mind practices drawn from Hatha-Vinyasa yoga and YOQI Qigong — cultivating energy, flow and somatic awareness.</p>
+        </article>
+
+        <!-- [EDIT: SERVICE-6] -->
+        <article class="service-card reveal d3">
+          <div class="svc-num" aria-hidden="true">06</div>
+          <h3 class="svc-title">Retreats &amp; Festivals</h3>
+          <p class="svc-desc">Multi-day immersions and festival workshops — spaces for deep rest, celebration and community in nature.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: Philosophy -->
+  <section class="holistic-philosophy" id="h-philosophy" aria-labelledby="h-phil-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">Core Beliefs</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-phil-h2">The Three Medicines</h2>
+      </div>
+      <div class="philosophy-grid">
+
+        <!-- [EDIT: PHILOSOPHY-1] -->
+        <div class="reveal d1">
+          <div class="phil-num" aria-hidden="true">I</div>
+          <h3 class="phil-title">Movement</h3>
+          <p class="phil-text">Dance, yoga, Qigong. The body holds wisdom the mind cannot access. Movement unlocks what words can't reach.</p>
+        </div>
+
+        <!-- [EDIT: PHILOSOPHY-2] -->
+        <div class="reveal d2">
+          <div class="phil-num" aria-hidden="true">II</div>
+          <h3 class="phil-title">Music</h3>
+          <p class="phil-text">Sound vibrates through every cell. Music opens the heart, bypasses the analytical mind and invites genuine presence.</p>
+        </div>
+
+        <!-- [EDIT: PHILOSOPHY-3] -->
+        <div class="reveal d3">
+          <div class="phil-num" aria-hidden="true">III</div>
+          <h3 class="phil-title">Meditation</h3>
+          <p class="phil-text">The most transformative practice. Turning attention inward — learning to observe, to be, not just to do.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: About Niko -->
+  <section class="holistic-about" id="h-about" aria-labelledby="h-about-h2">
+    <div class="container">
+      <div class="about-grid">
+
+        <div>
+          <div class="reveal">
+            <p class="label label--holistic">About</p>
+            <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin:.5rem 0 1.5rem" id="h-about-h2">Niko Bo</h2>
+          </div>
+
+          <!-- [EDIT: HOLISTIC-BIO-TEXT] -->
+          <div class="bio-text-block reveal d1"><p>Ten years ago Niko was pursuing a high-status career in Geneva — driven by ambition and disconnected from himself. Today he wears sandals and is often in nature. He meditates, dances and sings. He travels slowly, hosts retreats and walks alongside people as their coach.</p></div>
+          <div class="bio-text-block reveal d2"><p>In 2017, after a moment of deep clarity, he let go of all previous ambitions and committed to a radical period of exploration — traveling the world, diving into yoga, meditation, Qigong and authentic relating.</p></div>
+
+          <!-- [EDIT: PULL-QUOTE] -->
+          <blockquote class="pull-quote reveal d3">
+            "I realized that the most important things for me are connection, community, nature and creativity."
+          </blockquote>
+
+          <div class="bio-text-block reveal d4"><p>Today his work is rooted in a simple philosophy: healing requires integrating the whole person — mind, body, heart and the creative life force. He draws on Yoga, Tantra, Qigong, Taoism and Buddhism.</p></div>
+
+          <!-- [EDIT: CREDENTIALS] -->
+          <ul class="credentials reveal d5" aria-label="Credentials and training">
+            <li>200hr Hatha-Vinyasa Yoga Teacher · Krishna Village, Australia</li>
+            <li>YOQI Associate Qigong Instructor</li>
+            <li>Transformational Coaching Certificate · University of Utrecht</li>
+          </ul>
+        </div>
+
+        <!-- [EDIT: HOLISTIC-PHOTO] -->
+        <!-- SWAP FOR REAL IMAGE: replace this entire div with
+             <img src="niko-holistic.jpg" alt="Niko Bo" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top">
+        -->
+        <div class="photo-wrap photo-wrap--holistic reveal d2" aria-label="Niko Bo photo — coming soon">
+          <div class="photo-initials" aria-hidden="true">NB</div>
+          <div class="photo-caption">Photo coming soon</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: Group Experiences -->
+  <section class="holistic-experiences" id="h-experiences" aria-labelledby="h-exp-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">Community</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-exp-h2">Group Experiences</h2>
+      </div>
+      <div class="exp-grid">
+
+        <!-- [EDIT: EXPERIENCE-1] -->
+        <article class="exp-card reveal d1">
+          <h3 class="exp-title">Men's Circle</h3>
+          <div class="exp-freq">Weekly</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-2] -->
+        <article class="exp-card reveal d2">
+          <h3 class="exp-title">Cacao Ceremony</h3>
+          <div class="exp-freq">Monthly</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-3] -->
+        <article class="exp-card reveal d3">
+          <h3 class="exp-title">Ecstatic Dance</h3>
+          <div class="exp-freq">Regular</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-4] -->
+        <article class="exp-card reveal d4">
+          <h3 class="exp-title">Kirtan / Singing Circle</h3>
+          <div class="exp-freq">Seasonal</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-5] -->
+        <article class="exp-card reveal d1">
+          <h3 class="exp-title">Sharing Circles</h3>
+          <div class="exp-freq">Seasonal</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-6] -->
+        <article class="exp-card reveal d2">
+          <h3 class="exp-title">Retreats</h3>
+          <div class="exp-freq">Immersive</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-7] -->
+        <article class="exp-card reveal d3">
+          <h3 class="exp-title">Workshops</h3>
+          <div class="exp-freq">Festivals</div>
+        </article>
+
+        <!-- [EDIT: EXPERIENCE-8] -->
+        <article class="exp-card reveal d4">
+          <h3 class="exp-title">1:1 Coaching</h3>
+          <div class="exp-freq">Online</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: Contact -->
+  <section class="holistic-contact" id="h-contact" aria-labelledby="h-contact-h2">
+    <div class="holistic-contact-inner">
+      <p class="label label--holistic reveal">Get In Touch</p>
+      <h2 class="display booking-h2 reveal d1" id="h-contact-h2">Begin Your Journey</h2>
+      <p class="booking-sub reveal d2">Ready to explore what's possible? Reach out and let's connect.</p>
+      <!-- [EDIT: HOLISTIC-EMAIL] -->
+      <a href="mailto:hello@nikobo.art" class="holistic-email reveal d3">hello@nikobo.art</a>
+      <!-- [EDIT: HOLISTIC-SOCIAL-LINKS] -->
+      <div class="socials reveal d4" aria-label="Social media">
+        <a href="https://www.instagram.com/nikobo.art" target="_blank" rel="noopener noreferrer" class="social-pill">Instagram</a>
+        <a href="https://www.facebook.com/yummmniko/" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+        <a href="https://www.linkedin.com/in/nikoboholistic/" target="_blank" rel="noopener noreferrer" class="social-pill">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-name">Niko Bo</span>
+    <span class="footer-copy">© 2025 nikobo.art</span>
+  </footer>
+
+</section>
+
+<script>
+  // ── Pages ──
+  const pages = {
+    landing:  document.getElementById('landing'),
+    music:    document.getElementById('music'),
+    holistic: document.getElementById('holistic')
+  };
+
+  // ── URL ↔ page mapping ──
+  const PATH_TO_PAGE = { '/music': 'music', '/coaching': 'holistic' };
+  const PAGE_TO_PATH = { landing: '/', music: '/music', holistic: '/coaching' };
+
+  function pageFromPath() {
+    const path = window.location.pathname.replace(/\/index\.html$/, '') || '/';
+    return PATH_TO_PAGE[path] || 'landing';
+  }
+
+  // ── Core activate (no URL change) ──
+  function _activate(id) {
+    Object.values(pages).forEach(p => p.classList.remove('active'));
+    pages[id].classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    setTimeout(initReveal, 60);
+  }
+
+  // ── Public navigate (updates URL) ──
+  function showPage(id) {
+    try { history.pushState({ page: id }, '', PAGE_TO_PATH[id]); } catch(e) {}
+    _activate(id);
+  }
+
+  // ── Browser back / forward ──
+  window.addEventListener('popstate', e => {
+    _activate(e.state ? e.state.page : pageFromPath());
+  });
+
+  // ── Burger menu ──
+  let _activeBurger = null;
+  function toggleBurger(btn, navId) {
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !expanded);
+    document.getElementById(navId).classList.toggle('open');
+    _activeBurger = expanded ? null : { btn, navId };
+  }
+  function closeBurger() {
+    if (!_activeBurger) return;
+    const { btn, navId } = _activeBurger;
+    btn.setAttribute('aria-expanded', 'false');
+    document.getElementById(navId).classList.remove('open');
+    _activeBurger = null;
+  }
+
+  // ── Smooth scroll with nav offset ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', function(e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - 74;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
+  });
+
+  // ── Scroll reveal ──
+  let revealObserver;
+  function initReveal() {
+    if (revealObserver) revealObserver.disconnect();
+    const els = document.querySelectorAll('.page.active .reveal:not(.visible)');
+    revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+    els.forEach(el => revealObserver.observe(el));
+  }
+
+  // ── Hero portrait parallax ──
+  (function () {
+    const portrait = document.querySelector('.music-hero-portrait');
+    const musicPage = document.getElementById('music');
+    if (!portrait || !musicPage) return;
+    let ticking = false;
+    function updateParallax() {
+      if (!musicPage.classList.contains('active')) { ticking = false; return; }
+      portrait.style.transform = `translateY(calc(-50% + ${window.scrollY * 0.28}px))`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(updateParallax); ticking = true; }
+    }, { passive: true });
+  })();
+
+  // ── Init: route to correct page on load ──
+  const startPage = pageFromPath();
+  history.replaceState({ page: startPage }, '', window.location.pathname);
+  _activate(startPage);
+</script>
+</body>
+</html>

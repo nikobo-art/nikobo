@@ -692,6 +692,32 @@
       transform: rotate(-135deg) translate(-2px,-2px);
     }
     .section-details-body { padding-top: .5rem; }
+    .ed-video-col {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    @media (min-width: 700px) {
+      .ed-video-col { grid-template-columns: 260px 1fr; }
+    }
+    .ed-video-wrap {
+      width: 100%;
+      max-width: 260px;
+      aspect-ratio: 9/16;
+      position: relative;
+      border: 1px solid var(--border-strong);
+      background: #000;
+    }
+    .ed-video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
     .ed-photo-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1360,16 +1386,16 @@
 
         <div class="section-details-body">
 
-          <div style="display:grid;grid-template-columns:1fr;gap:2rem;max-width:780px;margin-bottom:2.5rem">
-            <div class="reveal">
-              <p class="label label--music" style="margin-bottom:.75rem">What is Ecstatic Dance?</p>
-              <p style="font-size:.975rem;color:var(--text-2);line-height:1.78">Ecstatic Dance is a conscious movement gathering held without alcohol or other substances — a space where people connect deeply with themselves, the music and the moment. The format includes shared agreements: no phones, no talking and no shoes on the dancefloor. Guided by intentional music arcs, each event takes participants on a journey from stillness to peak energy and back to rest. Ecstatic Dance has been spreading across the globe in recent years as a powerful intersection of music, movement and community.</p>
-            </div>
+          <!-- What is Ecstatic Dance — full width -->
+          <div style="max-width:780px;margin-bottom:2.5rem" class="reveal">
+            <p class="label label--music" style="margin-bottom:.75rem">What is Ecstatic Dance?</p>
+            <p style="font-size:.975rem;color:var(--text-2);line-height:1.78">Ecstatic Dance is a conscious movement gathering held without alcohol or other substances — a space where people connect deeply with themselves, the music and the moment. The format includes shared agreements: no phones, no talking and no shoes on the dancefloor. Guided by intentional music arcs, each event takes participants on a journey from stillness to peak energy and back to rest. Ecstatic Dance has been spreading across the globe in recent years as a powerful intersection of music, movement and community.</p>
+          </div>
 
-            <div class="reveal d2">
-              <p class="label label--music" style="margin-bottom:.75rem">Ecstatic Dance in Colombia</p>
+          <!-- Colombia text — full width now that video is removed -->
+          <div class="reveal" style="max-width:780px;margin-bottom:2.5rem">
+            <p class="label label--music" style="margin-bottom:.75rem">Ecstatic Dance in Colombia</p>
               <p style="font-size:.975rem;color:var(--text-2);line-height:1.78">Niko Bo is one of the leading figures bringing Ecstatic Dance to Medellín and Colombia. He founded <strong style="color:var(--text-1);font-weight:600">ECSTASÍA</strong> — an ongoing event series that has become a cornerstone of the conscious dance scene in Medellín — and the <strong style="color:var(--text-1);font-weight:600">Medellín Ecstatic Dance Festival</strong>, whose first edition in 2025 sold out, establishing it as a landmark event on the Colombian calendar.</p>
-            </div>
           </div>
 
           <!-- Photo grid -->

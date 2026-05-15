@@ -649,6 +649,75 @@
       transform: rotate(-135deg) translate(-2px, -2px);
     }
     .ed-summary:hover { color: var(--text-2); }
+
+    /* ── Section-level collapsible (About Ecstatic Dance) ── */
+    .section-details { width: 100%; }
+    .section-details-summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      user-select: none;
+      margin-bottom: clamp(2.5rem,5vw,4rem);
+    }
+    .section-details-summary::-webkit-details-marker { display: none; }
+    .section-details-summary:hover .section-details-chevron { color: var(--text-1); }
+    .section-details-chevron {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .62rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      white-space: nowrap;
+      padding-bottom: .35rem;
+      transition: color .2s;
+    }
+    .section-details-chevron::after {
+      content: '';
+      display: block;
+      width: 11px;
+      height: 11px;
+      border-right: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg) translate(-2px,-2px);
+      transition: transform .3s cubic-bezier(.25,.46,.45,.94);
+      flex-shrink: 0;
+    }
+    .section-details[open] .section-details-chevron::after {
+      transform: rotate(-135deg) translate(-2px,-2px);
+    }
+    .section-details-body { padding-top: .5rem; }
+    .ed-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .75rem;
+      margin-top: 2.5rem;
+    }
+    @media (min-width: 900px) {
+      .ed-photo-grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    }
+    .ed-photo-grid .press-photo { aspect-ratio: 4/3; }
+    .ed-photo-wide {
+      width: 100%;
+      aspect-ratio: 21/9;
+      overflow: hidden;
+      margin-top: .75rem;
+      position: relative;
+    }
+    @media (min-width: 900px) { .ed-photo-wide { margin-top: 1rem; } }
+    .ed-photo-wide img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+      transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+    }
+    .ed-photo-wide:hover img { transform: scale(1.03); }
     .ed-body {
       font-family: var(--font-b);
       font-size: .95rem;
@@ -1043,6 +1112,7 @@
       <li><a href="#m-bio" onclick="closeBurger()">Bio</a></li>
       <li><a href="#m-mixes" onclick="closeBurger()">Mixes</a></li>
       <li><a href="#m-tracks" onclick="closeBurger()">Original Music</a></li>
+      <li><a href="#m-ecstatic" onclick="closeBurger()">Ecstatic Dance</a></li>
       <li><a href="#m-press" onclick="closeBurger()">Photos</a></li>
       <li><a href="#m-rider" onclick="closeBurger()">Tech Rider</a></li>
       <li><a href="#m-booking" onclick="closeBurger()">Booking</a></li>
@@ -1083,10 +1153,24 @@
           </div>
 
           <!-- [EDIT: MUSIC-BIO-TEXT] -->
-          <div class="bio-text-block reveal d1"><p>Niko Bo is a DJ and producer from Germany operating in two distinct but complementary worlds: the raw, driving energy of techno and psytrance for clubs and festivals, and the intentional, arc-driven sound of ecstatic dance for conscious gatherings.</p></div>
-          <div class="bio-text-block reveal d2"><p>On the harder side, Niko plays techno — acid, bounce, peak, hard dance and neo rave — and psytrance in both progressive and full-on flavors. His club and festival sets are built for dancefloors that want to go deep and go hard: layered, hypnotic, relentless in the best possible way.</p></div>
-          <div class="bio-text-block reveal d3"><p>At ecstatic dance events, the palette shifts entirely. Niko crafts intentional journeys through genre, vibe and emotion — moving through organic and downtempo openings, rising through tribal house, latin house and progressive house, accelerating into psytrance, drum &amp; bass and peak-hour intensity, before landing softly with medicine music and mantra-infused closes. Each set has a clear, intense climax and a carefully held arc.</p></div>
-          <div class="bio-text-block reveal d4"><p>In the studio, Niko writes and produces original music that reflects both sides of his world — the driving pulse of techno and psytrance alongside the organic textures of medicine music and downtempo. His productions live in the space between the club and the ceremony.</p></div>
+          <div class="bio-text-block reveal d1" style="margin-bottom:1.6rem">
+            <p style="font-size:clamp(1.15rem,2vw,1.45rem);line-height:1.45;color:var(--text-1);font-weight:300">
+              DJ and producer from Germany.<br>
+              Raw driving energy for <strong style="font-weight:700;color:var(--text-1)">techno</strong> and <strong style="font-weight:700;color:var(--text-1)">psytrance</strong> floors —<br>
+              intentional, arc-driven journeys for <strong style="font-weight:700;color:var(--text-1)">ecstatic dance</strong>.
+            </p>
+            <p style="margin-top:.9rem;font-size:clamp(.8rem,1.2vw,.95rem);letter-spacing:.18em;text-transform:uppercase;color:var(--music-accent);font-weight:500">Two worlds. One artist.</p>
+          </div>
+
+          <details class="ed-details reveal d2" style="margin-top:1.25rem">
+            <summary class="ed-summary">Full Bio</summary>
+            <div class="ed-body">
+              <p style="margin-bottom:.9rem">On the harder side, Niko plays techno — acid, bounce, peak, hard dance and neo rave — and psytrance in both progressive and full-on flavors. His club and festival sets are built for dancefloors that want to go deep and go hard: layered, hypnotic, relentless in the best possible way.</p>
+              <p style="margin-bottom:.9rem">At ecstatic dance events, the palette shifts entirely. Niko crafts intentional journeys through genre, vibe and emotion — moving through organic and downtempo openings, rising through tribal house, latin house and progressive house, accelerating into psytrance, drum &amp; bass and peak-hour intensity, before landing softly with medicine music and mantra-infused closes. Each set has a clear, intense climax and a carefully held arc.</p>
+              <p style="margin-bottom:.9rem">Beyond the decks, Niko is one of the leading figures bringing ecstatic dance to Medellín and Colombia. He founded the ECSTASÍA event series and the Medellín Ecstatic Dance Festival — whose first edition in 2025 sold out, establishing it as a landmark event on the Colombian conscious dance scene.</p>
+              <p>In the studio, Niko writes and produces original music that reflects both sides of his world — the driving pulse of techno and psytrance alongside the organic textures of medicine music and downtempo. His productions live in the space between the club and the ceremony.</p>
+            </div>
+          </details>
 
 
           <!-- [EDIT: MUSIC-GENRE-TAGS] -->
@@ -1101,6 +1185,10 @@
             <span class="tag tag--music">Full On</span>
             <span class="tag tag--music">Ecstatic Dance</span>
             <span class="tag tag--music">Peak Time / Driving</span>
+            <span class="tag tag--music">Afro House</span>
+            <span class="tag tag--music">Latin House</span>
+            <span class="tag tag--music">Progressive House</span>
+            <span class="tag tag--music">Drum &amp; Bass</span>
             <span class="tag tag--music">Downtempo</span>
           </div>
         </div>
@@ -1166,10 +1254,6 @@
         <!-- ── Ecstatic Dance ── -->
         <div class="mix-group reveal">
           <h3 class="mix-group-label">Ecstatic Dance</h3>
-          <details class="ed-details">
-            <summary class="ed-summary">What is Ecstatic Dance?</summary>
-            <p class="ed-body">Ecstatic Dance is a conscious movement gathering without any alcohol or other substances. People can experience ecstasy without taking any drugs. It's all about connection to the self, to the music and to the moment. It includes agreements such as no phones, no talking and no shoes on the dancefloor. Ecstatic dance has been spreading all over the globe in recent years, and Niko Bo has been crucial in the building of the Ecstatic Dance scene in Medellín, Colombia, where he founded and organized the first Medellín Ecstatic Dance Festival in 2025, as well as the event series ECSTASÍA.</p>
-          </details>
           <div class="mixes-grid">
 
             <!-- [EDIT: MUSIC-MIX-1] -->
@@ -1259,6 +1343,63 @@
           </a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- MUSIC: About Ecstatic Dance -->
+  <section class="music-mixes" id="m-ecstatic" aria-labelledby="m-ecstatic-h2" style="background:#0d0808">
+    <div class="container">
+      <details class="section-details">
+        <summary class="section-details-summary reveal">
+          <div>
+            <p class="label label--music">Ecstatic Dance</p>
+            <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="m-ecstatic-h2">About Ecstatic Dance</h2>
+          </div>
+          <span class="section-details-chevron">Expand</span>
+        </summary>
+
+        <div class="section-details-body">
+
+          <div style="display:grid;grid-template-columns:1fr;gap:2rem;max-width:780px;margin-bottom:2.5rem">
+            <div class="reveal">
+              <p class="label label--music" style="margin-bottom:.75rem">What is Ecstatic Dance?</p>
+              <p style="font-size:.975rem;color:var(--text-2);line-height:1.78">Ecstatic Dance is a conscious movement gathering held without alcohol or other substances — a space where people connect deeply with themselves, the music and the moment. The format includes shared agreements: no phones, no talking and no shoes on the dancefloor. Guided by intentional music arcs, each event takes participants on a journey from stillness to peak energy and back to rest. Ecstatic Dance has been spreading across the globe in recent years as a powerful intersection of music, movement and community.</p>
+            </div>
+
+            <div class="reveal d2">
+              <p class="label label--music" style="margin-bottom:.75rem">Ecstatic Dance in Colombia</p>
+              <p style="font-size:.975rem;color:var(--text-2);line-height:1.78">Niko Bo is one of the leading figures bringing Ecstatic Dance to Medellín and Colombia. He founded <strong style="color:var(--text-1);font-weight:600">ECSTASÍA</strong> — an ongoing event series that has become a cornerstone of the conscious dance scene in Medellín — and the <strong style="color:var(--text-1);font-weight:600">Medellín Ecstatic Dance Festival</strong>, whose first edition in 2025 sold out, establishing it as a landmark event on the Colombian calendar.</p>
+            </div>
+          </div>
+
+          <!-- Photo grid -->
+          <div class="ed-photo-grid">
+            <div class="press-photo reveal d1">
+              <img src="brand_assets/ED-photos/WhatsApp Image 2026-01-29 at 12.03.17.jpeg" alt="Ecstatic dance crowd, bamboo venue" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="press-photo reveal d2">
+              <img src="brand_assets/ED-photos/WhatsApp Image 2026-01-29 at 12.03.17 (1).jpeg" alt="Ecstatic dance light beams, bamboo venue" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="press-photo reveal d3">
+              <img src="brand_assets/ED-photos/DSC_9552.jpg" alt="Community gathering, closing circle" loading="lazy" style="object-position:center 40%">
+            </div>
+            <div class="press-photo reveal d4">
+              <img src="brand_assets/ED-photos/20250322_220227.jpg" alt="Dancers moving freely, ecstatic dance night" loading="lazy" style="object-position:center center">
+            </div>
+            <div class="press-photo reveal d5">
+              <img src="brand_assets/ED-photos/WhatsApp Image 2026-01-29 at 12.02.05.jpeg" alt="Niko Bo at the decks, ecstatic dance" loading="lazy" style="object-position:center 25%">
+            </div>
+            <div class="press-photo reveal d6">
+              <img src="brand_assets/ED-photos/WhatsApp Image 2026-01-29 at 12.02.04.jpeg" alt="Niko Bo performing, ecstatic dance" loading="lazy" style="object-position:center 20%">
+            </div>
+          </div>
+          <!-- Wide exterior shot -->
+          <div class="ed-photo-wide reveal">
+            <img src="brand_assets/ED-photos/Imagen de WhatsApp 2025-03-23 a las 10.49.31_622aaefb.jpg" alt="Medellín Ecstatic Dance Festival — venue exterior at night" loading="lazy">
+          </div>
+
+        </div>
+      </details>
     </div>
   </section>
 

@@ -1907,8 +1907,10 @@
   })();
 
   // ── Init: route to correct page on load ──
-  const startPage = pageFromPath();
-  history.replaceState({ page: startPage }, '', window.location.pathname);
+  const _stored = sessionStorage.getItem('nikobo_page');
+  sessionStorage.removeItem('nikobo_page');
+  const startPage = _stored || pageFromPath();
+  history.replaceState({ page: startPage }, '', PAGE_TO_PATH[startPage] || '/');
   _activate(startPage);
 </script>
 </body>

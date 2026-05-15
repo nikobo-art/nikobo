@@ -1022,6 +1022,194 @@
     .credentials li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--holistic-accent); flex-shrink:0; }
 
     /* ================================================================
+       HOLISTIC LANDING — HEAD / BODY / HEART HERO HEADING
+    ================================================================ */
+    .hbh-heading { display: block; margin-bottom: 1.5rem; }
+    .hbh-connector {
+      display: block;
+      font-family: var(--font-b);
+      font-size: clamp(.65rem,1.1vw,.8rem);
+      font-weight: 300;
+      font-style: normal;
+      letter-spacing: .14em;
+      text-transform: lowercase;
+      color: var(--text-3);
+      line-height: 1;
+      margin-bottom: .18em;
+      padding-left: .1em;
+    }
+    .hbh-word {
+      display: block;
+      font-family: var(--font-h);
+      font-size: clamp(3.8rem,10.5vw,9.5rem);
+      font-weight: 700;
+      font-style: italic;
+      font-optical-sizing: auto;
+      letter-spacing: -.025em;
+      line-height: .87;
+      color: var(--text-1);
+      margin-bottom: .3em;
+    }
+    .hbh-word:last-child { margin-bottom: 0; }
+    .hbh-word--heart { color: var(--holistic-light); }
+
+    /* ================================================================
+       HOLISTIC LANDING — SUB-PAGE CARDS
+    ================================================================ */
+    .subpage-cards { padding: clamp(4rem,9vw,7rem) 0; background: #191919; }
+    .subpage-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1rem;
+      margin-top: clamp(2.5rem,5vw,3.5rem);
+    }
+    .subpage-card {
+      background: var(--base);
+      border: 1px solid var(--border);
+      padding: clamp(1.75rem,3vw,2.5rem);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      transition: border-color .3s, transform .35s var(--ease-spring), box-shadow .35s;
+    }
+    .subpage-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--holistic-accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .45s var(--ease-out);
+    }
+    .subpage-card:hover { border-color:rgba(95,138,101,.28); transform:translateY(-5px); box-shadow:0 14px 44px rgba(0,0,0,.45),0 0 24px var(--holistic-glow); }
+    .subpage-card:hover::after { transform:scaleX(1); }
+    .subpage-card:focus-visible { outline:1px solid var(--holistic-accent); outline-offset:3px; }
+    .subpage-num { font-family:var(--font-d); font-size:2.75rem; font-weight:300; color:var(--border-strong); line-height:1; margin-bottom:.75rem; }
+    .subpage-title { font-family:var(--font-h); font-size:1.45rem; font-weight:600; font-optical-sizing:auto; margin-bottom:.6rem; }
+    .subpage-desc { font-size:.875rem; color:var(--text-2); line-height:1.65; flex:1; margin-bottom:1.25rem; }
+    .subpage-arrow {
+      font-size:.62rem; letter-spacing:.14em; text-transform:uppercase;
+      color:var(--holistic-accent);
+      transition:transform .25s var(--ease-spring);
+      display:inline-block;
+    }
+    .subpage-card:hover .subpage-arrow { transform:translateX(5px); }
+
+    /* ================================================================
+       SUB-PAGES — SHARED STYLES
+    ================================================================ */
+    .subpage-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      background: var(--holistic-bg);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(5rem,12vw,9rem) clamp(1rem,4vw,2.5rem) clamp(3rem,6vw,5rem);
+    }
+    .subpage-hero::before {
+      content:'';
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(ellipse at 80% 20%, rgba(95,138,101,.15) 0%, transparent 55%),
+        radial-gradient(ellipse at 15% 85%, rgba(95,138,101,.06) 0%, transparent 48%);
+    }
+    .subpage-hero-inner { position:relative; z-index:2; max-width:1200px; width:100%; margin:0 auto; }
+    .subpage-hero-h1 {
+      font-family: var(--font-h);
+      font-size: clamp(3rem,8vw,7rem);
+      font-weight: 600;
+      font-style: italic;
+      font-optical-sizing: auto;
+      letter-spacing: -.02em;
+      line-height: .93;
+      color: var(--text-1);
+      margin: .5rem 0 1.25rem;
+      max-width: 18ch;
+    }
+    .subpage-hero-tag {
+      font-size: clamp(.875rem,1.6vw,1.05rem);
+      color: var(--text-2);
+      font-weight: 300;
+      max-width: 55ch;
+      line-height: 1.65;
+    }
+
+    /* ================================================================
+       SUB-PAGES — GROUP EXPERIENCES
+    ================================================================ */
+    .group-offering {
+      padding: clamp(3.5rem,7vw,5.5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .group-offering:last-child { border-bottom: none; }
+    .group-offering-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: clamp(2.5rem,5vw,4rem);
+      align-items: start;
+    }
+    .group-offering-title {
+      font-family: var(--font-h);
+      font-size: clamp(1.6rem,3vw,2.5rem);
+      font-weight: 600;
+      font-style: italic;
+      font-optical-sizing: auto;
+      line-height: 1.05;
+      color: var(--text-1);
+      position: sticky;
+      top: 80px;
+    }
+    .group-offering-body {
+      font-size: clamp(.875rem,1.5vw,1rem);
+      color: var(--text-2);
+      line-height: 1.82;
+    }
+
+    /* ================================================================
+       SUB-PAGES — BODY & MIND
+    ================================================================ */
+    .body-practice {
+      padding: clamp(3.5rem,7vw,5.5rem) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .body-practice:last-child { border-bottom: none; }
+    .body-practice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.8fr;
+      gap: clamp(2.5rem,5vw,4rem);
+      align-items: start;
+    }
+    .body-practice-label { position: sticky; top: 80px; }
+    .body-practice-num {
+      font-family: var(--font-d);
+      font-size: 4rem;
+      font-weight: 300;
+      color: rgba(95,138,101,.15);
+      line-height: 1;
+      margin-bottom: .5rem;
+    }
+    .body-practice-title {
+      font-family: var(--font-h);
+      font-size: clamp(1.4rem,2.5vw,2rem);
+      font-weight: 600;
+      font-style: italic;
+      font-optical-sizing: auto;
+      line-height: 1.1;
+      color: var(--text-1);
+    }
+    .body-practice-body {
+      font-size: clamp(.875rem,1.5vw,1rem);
+      color: var(--text-2);
+      line-height: 1.82;
+    }
+
+    /* ================================================================
        HOLISTIC — 1:1: WHO THIS IS FOR
     ================================================================ */
     .holistic-for { padding: clamp(5rem,10vw,8rem) 0; background: #0e120e; }
@@ -1261,9 +1449,14 @@
 
       .bio-grid    { grid-template-columns: 1fr; }
       .about-grid  { grid-template-columns: 1fr; }
-      .offer-layout{ grid-template-columns: 1fr; }
-      .offer-sticky{ position: static; }
-      .how-grid    { grid-template-columns: 1fr; }
+      .offer-layout          { grid-template-columns: 1fr; }
+      .offer-sticky          { position: static; }
+      .how-grid              { grid-template-columns: 1fr; }
+      .subpage-grid          { grid-template-columns: 1fr; }
+      .group-offering-inner  { grid-template-columns: 1fr; }
+      .group-offering-title  { position: static; }
+      .body-practice-grid    { grid-template-columns: 1fr; }
+      .body-practice-label   { position: static; }
       .photo-wrap { max-height: 420px; }
 
       .rider-grid     { grid-template-columns: repeat(2,1fr); }
@@ -1777,11 +1970,10 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="holistic-nav" role="list">
-      <li><a href="#h-for" onclick="closeBurger()">1:1 Coaching</a></li>
-      <li><a href="#h-how" onclick="closeBurger()">How I Work</a></li>
-      <li><a href="#h-clarity" onclick="closeBurger()">Clarity Call</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('coaching1on1');closeBurger()">1:1 Coaching</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('coachinggroups');closeBurger()">Group Experiences</a></li>
+      <li><a href="javascript:void(0)" onclick="showPage('coachingbody');closeBurger()">Body &amp; Mind</a></li>
       <li><a href="#h-about" onclick="closeBurger()">About</a></li>
-      <li><a href="#h-experiences" onclick="closeBurger()">Group Experiences</a></li>
       <li><a href="#h-contact" onclick="closeBurger()">Contact</a></li>
     </ul>
   </nav>
@@ -1789,172 +1981,49 @@
   <!-- HOLISTIC: Hero -->
   <section class="holistic-hero" id="h-hero" aria-labelledby="h-hero-h1">
     <div class="holistic-hero-inner">
-      <div class="hero-eyebrow reveal" style="color:var(--holistic-accent)">
-        <span class="label label--holistic">Coaching for Founders &amp; Professionals</span>
+      <div class="hero-eyebrow reveal">
+        <span class="label label--holistic">Holistic Coaching</span>
       </div>
       <!-- [EDIT: HOLISTIC-HERO-HEADING] -->
-      <h1 class="display holistic-hero-h1 reveal d1" id="h-hero-h1">
-        Slow Down<span class="accent-period">.</span>
+      <h1 class="display holistic-hero-h1 reveal d1" id="h-hero-h1" style="font-size:clamp(2.4rem,6vw,5.5rem);max-width:26ch;line-height:1.05">
+        Get out of your head,<br>into your body,<br>and connect to your heart.
       </h1>
-      <!-- [EDIT: HOLISTIC-HERO-TAGLINE] -->
       <p class="holistic-hero-tag reveal d2">
-        For founders, entrepreneurs and busy professionals who are overwhelmed, overstimulated, and ready to reconnect with what actually matters.
+        1:1 coaching, body–mind training and group experiences — all rooted in the same invitation: slow down, go inward, and reconnect.
       </p>
-      <!-- [EDIT: HOLISTIC-HERO-CTAS] -->
       <div class="cta-row reveal d3">
-        <a href="#h-clarity" class="btn btn-hp">Book a Free Clarity Call</a>
-        <a href="#h-for" class="btn btn-ho">Is This For You?</a>
+        <a href="javascript:void(0)" onclick="showPage('coaching1on1')" class="btn btn-hp">1:1 Coaching</a>
+        <a href="javascript:void(0)" onclick="showPage('coachinggroups')" class="btn btn-ho">Group Experiences</a>
       </div>
-      <blockquote class="hero-osho reveal d4">
-        "The real question is not whether life exists after death. The real question is whether you are alive before death."
-        <cite>— Osho</cite>
-      </blockquote>
     </div>
   </section>
 
-  <!-- HOLISTIC: Who This Is For -->
-  <section class="holistic-for" id="h-for" aria-labelledby="h-for-h2">
+  <!-- HOLISTIC LANDING: Sub-page Cards -->
+  <section class="subpage-cards" id="h-explore" aria-labelledby="h-explore-h2">
     <div class="container">
       <div class="section-head reveal">
-        <p class="label label--holistic">Who This Is For</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-for-h2">Does Any of This<br>Sound Familiar?</h2>
+        <p class="label label--holistic">Explore</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-explore-h2">Ways to Work Together</h2>
       </div>
-      <div class="for-questions">
-        <p class="for-question reveal d1">You're building something, leading people, making decisions all day — but underneath the momentum you feel scattered, overstimulated, and quietly running on empty.</p>
-        <p class="for-question reveal d2">Have you noticed that more success hasn't brought more peace — and that you can't remember the last time you felt truly clear about what you actually want?</p>
-        <p class="for-question reveal d3">Are you craving a space to slow down, think deeply, and find your own signal again — away from the noise of constant demands?</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: What I Offer -->
-  <section class="holistic-offer" id="h-offer" aria-labelledby="h-offer-h2">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label label--holistic">What I Offer</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-offer-h2">1:1 Coaching Programs</h2>
-      </div>
-      <div class="offer-layout">
-        <div class="offer-sticky reveal d1">
-          <p class="label label--holistic" style="margin-bottom:1rem">Areas of Work</p>
-          <div class="how-methods">
-            <div class="how-method">Clarity Coaching</div>
-            <div class="how-method">Burnout Recovery &amp; Prevention</div>
-            <div class="how-method">Relationship Coaching</div>
-            <div class="how-method">Body–Mind Coaching</div>
-            <div class="how-method">Transformational Coaching</div>
-            <div class="how-method">Psychedelic Integration Coaching</div>
-          </div>
-        </div>
-        <div class="offer-prose reveal d2">
-          <p>For founders, entrepreneurs and professionals whose minds are always on — too many inputs, too many decisions, too little stillness — <strong>Clarity Coaching</strong> is the core of what I do. The work is about cutting through the noise: getting honest about what you actually want, what's draining you, and what decisions are being made by default rather than design. The result is not a plan. It's a clearer you making better choices.</p>
-          <p>When the pace has been relentless for too long, the system gives out. <strong>Burnout Recovery &amp; Prevention</strong> goes beyond rest — it involves understanding the patterns, beliefs and identities that made burning out feel inevitable, so it doesn't just happen again.</p>
-          <p><strong>Relationship Coaching</strong> explores the full spectrum of how you relate — to partners, to collaborators, to yourself. High-performing people often find their relationships suffer most from the same drivenness that built their success. This is a space to look honestly at that.</p>
-          <p>Through <strong>Body–Mind Coaching</strong>, we integrate somatic awareness into the work — because the body holds what the mind alone cannot resolve. This draws on breath, movement and nervous system tools to create real, felt shifts rather than intellectual understanding alone.</p>
-          <p><strong>Transformational Coaching</strong> is the container for all of it: accompanying deep processes of change, moving from who you've been to who you're becoming. And for those who have worked with plant medicines or psychedelics, <strong>Psychedelic Integration Coaching</strong> offers a careful, informed space to bring those experiences meaningfully into daily life.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: How I Work -->
-  <section class="holistic-how" id="h-how" aria-labelledby="h-how-h2">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label label--holistic">How I Work</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-how-h2">Action &amp; Being,<br>Both</h2>
-      </div>
-      <div class="how-grid">
-        <div class="reveal d1">
-          <p class="how-prose">My greatest strength as a coach is that I can be both action-oriented and being-oriented. I can explore your depth with you, accompanying a process of profound insight and transformation — and I can also be very hands-on, making things concrete and tangible, supporting action to achieve real change.</p>
-        </div>
-        <div class="reveal d2">
-          <p class="how-method-label">What we draw on</p>
-          <div class="how-methods">
-            <div class="how-method">Deep Coaching &amp; Guidance</div>
-            <div class="how-method">Somatic Tools &amp; Voice Work</div>
-            <div class="how-method">Nervous System Regulation</div>
-            <div class="how-method">Psychedelic Integration</div>
-            <div class="how-method">Accountability &amp; Mentoring</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: Outcomes -->
-  <section class="holistic-outcomes" id="h-outcomes" aria-labelledby="h-outcomes-h2">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label label--holistic">What Becomes Possible</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-outcomes-h2">Outcomes</h2>
-      </div>
-      <ol class="outcomes-list" aria-label="Coaching outcomes">
-        <li class="outcome-item reveal d1"><span class="outcome-num" aria-hidden="true">01</span>Embodied, authentic &amp; confident self</li>
-        <li class="outcome-item reveal d2"><span class="outcome-num" aria-hidden="true">02</span>Greater clarity &amp; grounded decision-making</li>
-        <li class="outcome-item reveal d3"><span class="outcome-num" aria-hidden="true">03</span>Increased self-love</li>
-        <li class="outcome-item reveal d4"><span class="outcome-num" aria-hidden="true">04</span>Inner peace &amp; deep rest</li>
-        <li class="outcome-item reveal d5"><span class="outcome-num" aria-hidden="true">05</span>Healthier relationships — to self and others</li>
-      </ol>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: Is This For You? -->
-  <section class="holistic-qualifier" id="h-qualifier" aria-labelledby="h-qualifier-h2">
-    <div class="container">
-      <div class="qualifier-inner">
-        <div class="reveal">
-          <p class="label label--holistic">An Honest Note</p>
-          <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-qualifier-h2">Is This For You?</h2>
-        </div>
-        <p class="qualifier-text reveal d1">This is only for you if you are willing to slow down long enough to actually look at what's driving you. If you're after tactics, productivity frameworks or a better morning routine, there are other coaches for that. This is for you if you suspect that the real leverage isn't in working harder or smarter — but in becoming clearer about who you are and what actually matters to you. If you've tasted success and found it quieter than expected, this is for you.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: Free Clarity Call CTA -->
-  <section class="holistic-clarity" id="h-clarity" aria-labelledby="h-clarity-h2">
-    <div class="clarity-inner">
-      <p class="label label--holistic reveal">Ready to Begin?</p>
-      <h2 class="display" style="font-size:clamp(2rem,5vw,4.5rem);margin-top:.5rem" id="h-clarity-h2">Book a Free<br>Clarity Call</h2>
-      <p class="clarity-desc reveal d1">A free 45-minute session — part conversation, part mini coaching. We explore what's actually going on for you, get to know each other, and find out whether we're a good match. I won't try to sell anything.</p>
-      <div class="clarity-cta-group reveal d2">
-        <a href="#h-contact" class="btn btn-hp">Get In Touch</a>
-        <a href="https://www.linkedin.com/in/nikoboholistic/details/recommendations/" target="_blank" rel="noopener noreferrer" class="testimonials-link">Read testimonials on LinkedIn →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOLISTIC: Philosophy -->
-  <section class="holistic-philosophy" id="h-philosophy" aria-labelledby="h-phil-h2">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label label--holistic">Core Beliefs</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-phil-h2">The Three Medicines</h2>
-      </div>
-      <div class="philosophy-grid">
-
-        <!-- [EDIT: PHILOSOPHY-1] -->
-        <div class="reveal d1">
-          <div class="phil-num" aria-hidden="true">I</div>
-          <h3 class="phil-title">Movement</h3>
-          <p class="phil-text">Dance, yoga, Qigong. The body holds wisdom the mind cannot access. Movement unlocks what words can't reach.</p>
-        </div>
-
-        <!-- [EDIT: PHILOSOPHY-2] -->
-        <div class="reveal d2">
-          <div class="phil-num" aria-hidden="true">II</div>
-          <h3 class="phil-title">Music</h3>
-          <p class="phil-text">Sound vibrates through every cell. Music opens the heart, bypasses the analytical mind and invites genuine presence.</p>
-        </div>
-
-        <!-- [EDIT: PHILOSOPHY-3] -->
-        <div class="reveal d3">
-          <div class="phil-num" aria-hidden="true">III</div>
-          <h3 class="phil-title">Meditation</h3>
-          <p class="phil-text">The most transformative practice. Turning attention inward — learning to observe, to be, not just to do.</p>
-        </div>
-
+      <div class="subpage-grid">
+        <button class="subpage-card reveal d1" onclick="showPage('coaching1on1')" aria-label="Go to 1:1 Coaching page">
+          <div class="subpage-num" aria-hidden="true">01</div>
+          <h3 class="subpage-title">1:1 Coaching</h3>
+          <p class="subpage-desc">Deep, personal work — one on one. Clarity, transformation, burnout recovery, relationship coaching, body–mind integration and psychedelic integration.</p>
+          <span class="subpage-arrow" aria-hidden="true">Explore →</span>
+        </button>
+        <button class="subpage-card reveal d2" onclick="showPage('coachinggroups')" aria-label="Go to Group Experiences page">
+          <div class="subpage-num" aria-hidden="true">02</div>
+          <h3 class="subpage-title">Group Experiences</h3>
+          <p class="subpage-desc">Men's circles, cacao ceremonies, ecstatic dance, retreats, workshops, kirtan and sharing circles — transformation held in community.</p>
+          <span class="subpage-arrow" aria-hidden="true">Explore →</span>
+        </button>
+        <button class="subpage-card reveal d3" onclick="showPage('coachingbody')" aria-label="Go to Body & Mind Training page">
+          <div class="subpage-num" aria-hidden="true">03</div>
+          <h3 class="subpage-title">Body &amp; Mind Training</h3>
+          <p class="subpage-desc">Hatha-Vinyasa yoga, YOQI Qigong and somatic movement — practices that bring you back into your body and cultivate lasting energy and presence.</p>
+          <span class="subpage-arrow" aria-hidden="true">Explore →</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1996,59 +2065,6 @@
     </div>
   </section>
 
-  <!-- HOLISTIC: Group Experiences -->
-  <section class="holistic-experiences" id="h-experiences" aria-labelledby="h-exp-h2">
-    <div class="container">
-      <div class="section-head reveal">
-        <p class="label label--holistic">Community</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-exp-h2">Group Experiences</h2>
-      </div>
-      <div class="exp-grid">
-
-        <!-- [EDIT: EXPERIENCE-1] -->
-        <article class="exp-card reveal d1">
-          <h3 class="exp-title">Men's Circle</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-2] -->
-        <article class="exp-card reveal d2">
-          <h3 class="exp-title">Cacao Ceremony</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-3] -->
-        <article class="exp-card reveal d3">
-          <h3 class="exp-title">Ecstatic Dance</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-4] -->
-        <article class="exp-card reveal d4">
-          <h3 class="exp-title">Kirtan / Singing Circle</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-5] -->
-        <article class="exp-card reveal d1">
-          <h3 class="exp-title">Sharing Circles</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-6] -->
-        <article class="exp-card reveal d2">
-          <h3 class="exp-title">Retreats</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-7] -->
-        <article class="exp-card reveal d3">
-          <h3 class="exp-title">Workshops</h3>
-        </article>
-
-        <!-- [EDIT: EXPERIENCE-8] -->
-        <article class="exp-card reveal d4">
-          <h3 class="exp-title">1:1 Coaching</h3>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
   <!-- HOLISTIC: Contact -->
   <section class="holistic-contact" id="h-contact" aria-labelledby="h-contact-h2">
     <div class="holistic-contact-inner">
@@ -2073,17 +2089,426 @@
 
 </section>
 
+<!-- ================================================================
+     1:1 COACHING SUB-PAGE
+================================================================ -->
+<section id="coaching1on1" class="page" aria-label="1:1 Coaching">
+
+  <nav class="site-nav site-nav--holistic" aria-label="1:1 Coaching navigation">
+    <div class="nav-left">
+      <button class="nav-back" onclick="showPage('holistic')" aria-label="Back to coaching">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M8 1L3 6L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Coaching
+      </button>
+      <span class="nav-logo">Niko Bo</span>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleBurger(this,'c1on1-nav')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="c1on1-nav" role="list">
+      <li><a href="#c1-for" onclick="closeBurger()">Who It's For</a></li>
+      <li><a href="#c1-offer" onclick="closeBurger()">What I Offer</a></li>
+      <li><a href="#c1-how" onclick="closeBurger()">How I Work</a></li>
+      <li><a href="#c1-clarity" onclick="closeBurger()">Free Clarity Call</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="holistic-hero" id="c1-hero" aria-labelledby="c1-hero-h1">
+    <div class="holistic-hero-inner">
+      <div class="hero-eyebrow reveal">
+        <span class="label label--holistic">1:1 Coaching</span>
+      </div>
+      <h1 class="display holistic-hero-h1 reveal d1" id="c1-hero-h1">
+        Slow Down<span class="accent-period">.</span>
+      </h1>
+      <p class="holistic-hero-tag reveal d2">
+        My 1:1 Coaching Programs Can Help You Get in Touch With What's Really Important.
+      </p>
+      <div class="cta-row reveal d3">
+        <a href="#c1-clarity" class="btn btn-hp">Book a Free Clarity Call</a>
+        <a href="#c1-for" class="btn btn-ho">Is This For You?</a>
+      </div>
+      <blockquote class="hero-osho reveal d4">
+        "The real question is not whether life exists after death. The real question is whether you are alive before death."
+        <cite>— Osho</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Who This Is For -->
+  <section class="holistic-for" id="c1-for" aria-labelledby="c1-for-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">Who This Is For</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="c1-for-h2">Does Any of This<br>Sound Familiar?</h2>
+      </div>
+      <div class="for-questions">
+        <p class="for-question reveal d1">You're functioning, showing up, getting things done — but part of you feels exhausted and disconnected.</p>
+        <p class="for-question reveal d2">Have you been pushing through for years and reached a point where your nervous system just can't anymore?</p>
+        <p class="for-question reveal d3">Are you craving clarity, real connection, and a deeper sense of inner peace — not just the next goal?</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Offer -->
+  <section class="holistic-offer" id="c1-offer" aria-labelledby="c1-offer-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">What I Offer</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="c1-offer-h2">1:1 Coaching Programs</h2>
+      </div>
+      <div class="offer-layout">
+        <div class="offer-sticky reveal d1">
+          <p class="label label--holistic" style="margin-bottom:1rem">Areas of Work</p>
+          <div class="how-methods">
+            <div class="how-method">Clarity Coaching</div>
+            <div class="how-method">Burnout Recovery &amp; Prevention</div>
+            <div class="how-method">Relationship Coaching</div>
+            <div class="how-method">Body–Mind Coaching</div>
+            <div class="how-method">Transformational Coaching</div>
+            <div class="how-method">Psychedelic Integration Coaching</div>
+          </div>
+        </div>
+        <div class="offer-prose reveal d2">
+          <p>For those whose minds are always on — too many inputs, too many decisions, too little stillness — <strong>Clarity Coaching</strong> is about cutting through the noise: getting honest about what you actually want, what's draining you, and what decisions are being made by default rather than design.</p>
+          <p>When the pace has been relentless for too long, the system gives out. <strong>Burnout Recovery &amp; Prevention</strong> goes beyond rest — it involves understanding the patterns, beliefs and identities that made burning out feel inevitable, so it doesn't just happen again.</p>
+          <p><strong>Relationship Coaching</strong> explores the full spectrum of how you relate — to partners, to collaborators, to yourself. Whether you're navigating a difficult dynamic, a transition, or simply a longing for deeper intimacy and honesty in your connections, this is a space to look clearly.</p>
+          <p>Through <strong>Body–Mind Coaching</strong>, we integrate somatic awareness into the work — because the body holds what the mind alone cannot resolve. This draws on breath, movement and nervous system tools to create real, felt shifts rather than intellectual understanding alone.</p>
+          <p><strong>Transformational Coaching</strong> is the container for all of it: accompanying deep processes of change, moving from who you've been to who you're becoming. And for those who have worked with plant medicines or psychedelics, <strong>Psychedelic Integration Coaching</strong> offers a careful, informed space to bring those experiences meaningfully into daily life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Work -->
+  <section class="holistic-how" id="c1-how" aria-labelledby="c1-how-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">How I Work</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="c1-how-h2">Action &amp; Being,<br>Both</h2>
+      </div>
+      <div class="how-grid">
+        <div class="reveal d1">
+          <p class="how-prose">My greatest strength as a coach is that I can be both action-oriented and being-oriented. I can explore your depth with you, accompanying a process of profound insight and transformation — and I can also be very hands-on, making things concrete and tangible, supporting action to achieve real change.</p>
+        </div>
+        <div class="reveal d2">
+          <p class="how-method-label">What we draw on</p>
+          <div class="how-methods">
+            <div class="how-method">Deep Coaching &amp; Guidance</div>
+            <div class="how-method">Somatic Tools &amp; Voice Work</div>
+            <div class="how-method">Nervous System Regulation</div>
+            <div class="how-method">Psychedelic Integration</div>
+            <div class="how-method">Accountability &amp; Mentoring</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Outcomes -->
+  <section class="holistic-outcomes" id="c1-outcomes" aria-labelledby="c1-outcomes-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">What Becomes Possible</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="c1-outcomes-h2">Outcomes</h2>
+      </div>
+      <ol class="outcomes-list" aria-label="Coaching outcomes">
+        <li class="outcome-item reveal d1"><span class="outcome-num" aria-hidden="true">01</span>Embodied, authentic &amp; confident self</li>
+        <li class="outcome-item reveal d2"><span class="outcome-num" aria-hidden="true">02</span>Greater clarity &amp; grounded decision-making</li>
+        <li class="outcome-item reveal d3"><span class="outcome-num" aria-hidden="true">03</span>Increased self-love</li>
+        <li class="outcome-item reveal d4"><span class="outcome-num" aria-hidden="true">04</span>Inner peace &amp; deep rest</li>
+        <li class="outcome-item reveal d5"><span class="outcome-num" aria-hidden="true">05</span>Healthier relationships — to self and others</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Is This For You? -->
+  <section class="holistic-qualifier" id="c1-qualifier" aria-labelledby="c1-qualifier-h2">
+    <div class="container">
+      <div class="qualifier-inner">
+        <div class="reveal">
+          <p class="label label--holistic">An Honest Note</p>
+          <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="c1-qualifier-h2">Is This For You?</h2>
+        </div>
+        <p class="qualifier-text reveal d1">This is only for you if you are willing to slow down long enough to actually look at what's driving you. If you're after tactics, productivity frameworks or a better morning routine, there are other coaches for that. This is for you if you suspect that the real leverage isn't in working harder or smarter — but in becoming clearer about who you are and what actually matters to you. If you've tasted success and found it quieter than expected, this is for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Free Clarity Call CTA -->
+  <section class="holistic-clarity" id="c1-clarity" aria-labelledby="c1-clarity-h2">
+    <div class="clarity-inner">
+      <p class="label label--holistic reveal">Ready to Begin?</p>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,4.5rem);margin-top:.5rem" id="c1-clarity-h2">Book a Free<br>Clarity Call</h2>
+      <p class="clarity-desc reveal d1">A free 45-minute session — part conversation, part mini coaching. We explore what's actually going on for you, get to know each other, and find out whether we're a good match. I won't try to sell anything.</p>
+      <div class="clarity-cta-group reveal d2">
+        <a href="mailto:hello@nikobo.art" class="btn btn-hp">Get In Touch</a>
+        <a href="https://www.linkedin.com/in/nikoboholistic/details/recommendations/" target="_blank" rel="noopener noreferrer" class="testimonials-link">Read testimonials on LinkedIn →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-name">Niko Bo</span>
+    <span class="footer-copy">© 2025 nikobo.art</span>
+  </footer>
+
+</section>
+
+<!-- ================================================================
+     GROUP EXPERIENCES SUB-PAGE
+================================================================ -->
+<section id="coachinggroups" class="page" aria-label="Group Experiences">
+
+  <nav class="site-nav site-nav--holistic" aria-label="Group Experiences navigation">
+    <div class="nav-left">
+      <button class="nav-back" onclick="showPage('holistic')" aria-label="Back to coaching">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M8 1L3 6L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Coaching
+      </button>
+      <span class="nav-logo">Niko Bo</span>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleBurger(this,'cgroups-nav')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="cgroups-nav" role="list">
+      <li><a href="#cg-mens" onclick="closeBurger()">Men's Circle</a></li>
+      <li><a href="#cg-cacao" onclick="closeBurger()">Cacao</a></li>
+      <li><a href="#cg-ed" onclick="closeBurger()">Ecstatic Dance</a></li>
+      <li><a href="#cg-retreats" onclick="closeBurger()">Retreats</a></li>
+      <li><a href="#cg-contact" onclick="closeBurger()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="subpage-hero" id="cg-hero" aria-labelledby="cg-hero-h1">
+    <div class="subpage-hero-inner">
+      <span class="label label--holistic reveal">Community &amp; Ritual</span>
+      <h1 class="subpage-hero-h1 reveal d1" id="cg-hero-h1">Transformation<br>Held Together</h1>
+      <p class="subpage-hero-tag reveal d2">Some of the deepest shifts happen not in one-on-one work, but in the field of the group — in the presence of others who are also showing up honestly.</p>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <div style="background:#0e120e;padding:clamp(3rem,6vw,5rem) 0">
+    <div class="container">
+
+      <article id="cg-mens" style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Men's<br>Circle</h2>
+          <div class="group-offering-body reveal d1">
+            <p>A brave space where men come together to share authentically and reconnect with their deeper selves and purpose. In a culture that rarely gives men permission to be vulnerable, uncertain or lost, the men's circle offers something rare: a held space to speak truth, be witnessed, and discover that the things you thought were only your problem are deeply human.</p>
+            <p style="margin-top:1rem">No agenda, no fixing. Just men, in a circle, being real with each other.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="cg-cacao" style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Cacao<br>Ceremony</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Sacred plant medicine gatherings with music, movement and meditation — spaces to open the heart within a held container. Cacao is a gentle, non-psychedelic heart-opener that has been used ceremonially for thousands of years. These gatherings combine intention-setting, breathwork, dance, sharing and silence into a journey that leaves people feeling more connected — to themselves and to each other.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="cg-ed" style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Ecstatic<br>Dance</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Free-form, music-guided dance journeys that release stress, unlock joy and move energy through the body. The format is simple: no phones, no shoes, no talking on the dancefloor. No steps to learn. Just you and the music and your body's own intelligence. Niko crafts intentional arcs through genre, vibe and emotion — from grounding openers through building energy to peak, then landing gently back to stillness.</p>
+            <p style="margin-top:1rem">Founder of the ECSTASÍA event series and the Medellín Ecstatic Dance Festival.</p>
+          </div>
+        </div>
+      </article>
+
+      <article id="cg-retreats" style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Retreats</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Multi-day immersions — spaces for deep rest, real connection and community, often in nature. Retreats weave together yoga, meditation, Qigong, cacao, ecstatic dance, coaching circles and shared silence into an experience that simply cannot be replicated in a single session. People arrive with a lot on their minds and leave lighter.</p>
+          </div>
+        </div>
+      </article>
+
+      <article style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Workshops &amp;<br>Festivals</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Shorter-format group sessions offered at festivals, conferences and conscious events — on topics including authentic relating, nervous system regulation, somatic movement, and the art of slowing down. These workshops are designed to be immediately practical and experiential, not just informational.</p>
+          </div>
+        </div>
+      </article>
+
+      <article style="padding:clamp(3rem,6vw,5rem) 0;border-bottom:1px solid var(--border)">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Kirtan &amp;<br>Singing Circle</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Call-and-response devotional singing rooted in the Indian tradition — accessible to everyone, no musical experience needed. Something happens when people sing together: the analytical mind quiets, the chest opens, and a sense of shared aliveness arises that is hard to describe and impossible to forget. Offered seasonally.</p>
+          </div>
+        </div>
+      </article>
+
+      <article style="padding:clamp(3rem,6vw,5rem) 0">
+        <div class="group-offering-inner">
+          <h2 class="group-offering-title reveal">Sharing<br>Circles</h2>
+          <div class="group-offering-body reveal d1">
+            <p>Structured spaces for honest conversation and mutual witnessing — using talking-stick principles and authentic relating practices. Not therapy, not a workshop, not casual conversation. A middle space where people slow down enough to actually say what's true, and actually listen.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="holistic-contact" id="cg-contact" aria-labelledby="cg-contact-h2">
+    <div class="holistic-contact-inner">
+      <p class="label label--holistic reveal">Join the Community</p>
+      <h2 class="display booking-h2 reveal d1" id="cg-contact-h2">Get In Touch</h2>
+      <p class="booking-sub reveal d2">Interested in any of these offerings? Reach out and let's talk.</p>
+      <a href="mailto:hello@nikobo.art" class="holistic-email reveal d3">hello@nikobo.art</a>
+      <div class="socials reveal d4" aria-label="Social media">
+        <a href="https://www.instagram.com/nikobo.art" target="_blank" rel="noopener noreferrer" class="social-pill">Instagram</a>
+        <a href="https://www.facebook.com/yummmniko/" target="_blank" rel="noopener noreferrer" class="social-pill">Facebook</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-name">Niko Bo</span>
+    <span class="footer-copy">© 2025 nikobo.art</span>
+  </footer>
+
+</section>
+
+<!-- ================================================================
+     BODY & MIND TRAINING SUB-PAGE
+================================================================ -->
+<section id="coachingbody" class="page" aria-label="Body and Mind Training">
+
+  <nav class="site-nav site-nav--holistic" aria-label="Body and Mind navigation">
+    <div class="nav-left">
+      <button class="nav-back" onclick="showPage('holistic')" aria-label="Back to coaching">
+        <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M8 1L3 6L8 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Coaching
+      </button>
+      <span class="nav-logo">Niko Bo</span>
+    </div>
+    <button class="nav-burger" aria-label="Toggle menu" aria-expanded="false" onclick="toggleBurger(this,'cbody-nav')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="cbody-nav" role="list">
+      <li><a href="#cb-yoga" onclick="closeBurger()">Yoga</a></li>
+      <li><a href="#cb-qigong" onclick="closeBurger()">Qigong</a></li>
+      <li><a href="#cb-somatic" onclick="closeBurger()">Somatic</a></li>
+      <li><a href="#cb-contact" onclick="closeBurger()">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="subpage-hero" id="cb-hero" aria-labelledby="cb-hero-h1">
+    <div class="subpage-hero-inner">
+      <span class="label label--holistic reveal">Body &amp; Mind Training</span>
+      <h1 class="subpage-hero-h1 reveal d1" id="cb-hero-h1">The Body<br>Knows First</h1>
+      <p class="subpage-hero-tag reveal d2">Most of what we call thinking is the body trying to get our attention. These practices teach you to listen — and to use that intelligence.</p>
+    </div>
+  </section>
+
+  <!-- Practices -->
+  <div style="background:#0e120e;padding:clamp(3rem,6vw,5rem) 0">
+    <div class="container">
+
+      <article class="body-practice" id="cb-yoga">
+        <div class="body-practice-grid">
+          <div class="body-practice-label reveal">
+            <div class="body-practice-num" aria-hidden="true">I</div>
+            <h2 class="body-practice-title">Hatha-Vinyasa<br>Yoga</h2>
+          </div>
+          <div class="body-practice-body reveal d1">
+            <p>A dynamic practice that links breath with movement, cultivating strength, flexibility and a quality of inner attention that carries well beyond the mat. Niko trained 200 hours in Hatha-Vinyasa at Krishna Village, Australia, and has been practicing for over a decade.</p>
+            <p style="margin-top:1rem">Sessions can range from slow and restorative to strong and energizing — adapted to what the body and the moment call for. Available as private sessions, group classes and integrated into retreats.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="body-practice" id="cb-qigong">
+        <div class="body-practice-grid">
+          <div class="body-practice-label reveal">
+            <div class="body-practice-num" aria-hidden="true">II</div>
+            <h2 class="body-practice-title">YOQI<br>Qigong</h2>
+          </div>
+          <div class="body-practice-body reveal d1">
+            <p>An ancient Chinese energy practice that cultivates life force (qi) through slow, flowing movement, breath and visualization. Where yoga builds and stretches, Qigong circulates and clears — it is one of the most effective practices for nervous system regulation, stress recovery and sustained vitality.</p>
+            <p style="margin-top:1rem">Niko is a certified YOQI Associate Instructor, trained in the lineage of Master Mingtong Gu. These sessions are gentle enough for anyone and profound enough to change how you move through the world.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="body-practice" id="cb-somatic">
+        <div class="body-practice-grid">
+          <div class="body-practice-label reveal">
+            <div class="body-practice-num" aria-hidden="true">III</div>
+            <h2 class="body-practice-title">Somatic<br>Movement</h2>
+          </div>
+          <div class="body-practice-body reveal d1">
+            <p>Somatic practices work with the intelligence of sensation — learning to read the body's signals, release stored tension and develop a felt sense of groundedness and safety. This includes elements of authentic movement, breathwork, shaking and trauma-informed body-awareness exercises.</p>
+            <p style="margin-top:1rem">Often integrated into 1:1 coaching work, and also offered as standalone sessions for those who want to develop a deeper relationship with their body outside of a talk-based format.</p>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <section class="holistic-contact" id="cb-contact" aria-labelledby="cb-contact-h2">
+    <div class="holistic-contact-inner">
+      <p class="label label--holistic reveal">Start Moving</p>
+      <h2 class="display booking-h2 reveal d1" id="cb-contact-h2">Book a Session</h2>
+      <p class="booking-sub reveal d2">Private sessions, group classes and retreat integration available. Get in touch to find out what's on.</p>
+      <a href="mailto:hello@nikobo.art" class="holistic-email reveal d3">hello@nikobo.art</a>
+      <div class="socials reveal d4" aria-label="Social media">
+        <a href="https://www.instagram.com/nikobo.art" target="_blank" rel="noopener noreferrer" class="social-pill">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="footer-name">Niko Bo</span>
+    <span class="footer-copy">© 2025 nikobo.art</span>
+  </footer>
+
+</section>
+
 <script>
   // ── Pages ──
   const pages = {
-    landing:  document.getElementById('landing'),
-    music:    document.getElementById('music'),
-    holistic: document.getElementById('holistic')
+    landing:       document.getElementById('landing'),
+    music:         document.getElementById('music'),
+    holistic:      document.getElementById('holistic'),
+    coaching1on1:  document.getElementById('coaching1on1'),
+    coachinggroups:document.getElementById('coachinggroups'),
+    coachingbody:  document.getElementById('coachingbody'),
   };
 
   // ── URL ↔ page mapping ──
-  const PATH_TO_PAGE = { '/music': 'music', '/coaching': 'holistic' };
-  const PAGE_TO_PATH = { landing: '/', music: '/music', holistic: '/coaching' };
+  const PATH_TO_PAGE = {
+    '/music':          'music',
+    '/coaching':       'holistic',
+    '/coaching/1on1':  'coaching1on1',
+    '/coaching/groups':'coachinggroups',
+    '/coaching/body':  'coachingbody',
+  };
+  const PAGE_TO_PATH = {
+    landing:        '/',
+    music:          '/music',
+    holistic:       '/coaching',
+    coaching1on1:   '/coaching/1on1',
+    coachinggroups: '/coaching/groups',
+    coachingbody:   '/coaching/body',
+  };
 
   function pageFromPath() {
     const path = window.location.pathname.replace(/\/index\.html$/, '') || '/';

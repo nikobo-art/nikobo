@@ -893,13 +893,36 @@
 
     /* [EDIT: HOLISTIC-HERO-HEADING] */
     .holistic-hero-h1 {
-      font-size: clamp(2.6rem,7.5vw,7rem);
+      font-size: clamp(4.5rem,13vw,11rem);
       color: var(--text-1);
-      max-width: 22ch;
-      margin-bottom: 1.5rem;
+      max-width: 14ch;
+      margin-bottom: 1.25rem;
       font-style: italic;
       font-weight: 600;
-      line-height: 1.05;
+      line-height: .93;
+    }
+    .holistic-hero-h1 .accent-period { color: var(--holistic-light); }
+    .hero-osho {
+      margin-top: 2.5rem;
+      padding-top: 1.75rem;
+      border-top: 1px solid var(--border);
+      max-width: 54ch;
+      font-family: var(--font-h);
+      font-style: italic;
+      font-size: clamp(.85rem,1.4vw,1rem);
+      color: var(--text-3);
+      line-height: 1.7;
+      font-optical-sizing: auto;
+    }
+    .hero-osho cite {
+      display: block;
+      margin-top: .55rem;
+      font-style: normal;
+      font-family: var(--font-b);
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--holistic-accent);
     }
 
     /* [EDIT: HOLISTIC-HERO-TAGLINE] */
@@ -999,6 +1022,188 @@
     .credentials li::before { content:''; width:4px; height:4px; border-radius:50%; background:var(--holistic-accent); flex-shrink:0; }
 
     /* ================================================================
+       HOLISTIC — 1:1: WHO THIS IS FOR
+    ================================================================ */
+    .holistic-for { padding: clamp(5rem,10vw,8rem) 0; background: #0e120e; }
+    .for-intro {
+      font-size: clamp(.9rem,1.5vw,1.05rem);
+      color: var(--text-2);
+      line-height: 1.78;
+      max-width: 58ch;
+      margin-bottom: clamp(2.5rem,5vw,3.5rem);
+    }
+    .for-questions { max-width: 780px; }
+    .for-question {
+      font-family: var(--font-h);
+      font-size: clamp(1.15rem,2.2vw,1.55rem);
+      font-weight: 300;
+      font-style: italic;
+      font-optical-sizing: auto;
+      color: var(--text-1);
+      line-height: 1.5;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .for-question:first-child { padding-top: 0; }
+
+    /* ================================================================
+       HOLISTIC — 1:1: WHAT I OFFER
+    ================================================================ */
+    .holistic-offer { padding: clamp(4rem,9vw,7rem) 0; background: #131613; }
+    .offer-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(3rem,6vw,5rem);
+      align-items: start;
+      margin-top: clamp(2.5rem,5vw,3.5rem);
+    }
+    .offer-sticky { position: sticky; top: 80px; }
+    .offer-prose {
+      font-size: clamp(.9rem,1.5vw,1.05rem);
+      color: var(--text-2);
+      line-height: 1.85;
+    }
+    .offer-prose p { margin-bottom: 1.25rem; }
+    .offer-prose p:last-child { margin-bottom: 0; }
+    .offer-prose strong { color: var(--text-1); font-weight: 500; }
+
+    /* ================================================================
+       HOLISTIC — 1:1: HOW I WORK
+    ================================================================ */
+    .holistic-how {
+      padding: clamp(4rem,9vw,7rem) 0;
+      background: var(--holistic-bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: clamp(3rem,6vw,5rem);
+      align-items: start;
+      margin-top: clamp(2.5rem,5vw,3.5rem);
+    }
+    .how-prose {
+      font-size: clamp(.9rem,1.5vw,1.05rem);
+      color: var(--text-2);
+      line-height: 1.85;
+    }
+    .how-methods { display: flex; flex-direction: column; }
+    .how-method-label {
+      font-family: var(--font-b);
+      font-size: .65rem;
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      margin-bottom: 1rem;
+    }
+    .how-method {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: .875rem;
+      color: var(--text-2);
+      transition: color .2s;
+    }
+    .how-method:last-child { border-bottom: none; }
+    .how-method::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: var(--holistic-accent);
+      flex-shrink: 0;
+    }
+    .how-method:hover { color: var(--text-1); }
+
+    /* ================================================================
+       HOLISTIC — 1:1: OUTCOMES
+    ================================================================ */
+    .holistic-outcomes { padding: clamp(4rem,9vw,7rem) 0; background: #111; }
+    .outcomes-list {
+      max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      margin-top: clamp(2.5rem,5vw,3.5rem);
+    }
+    .outcome-item {
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.2rem 0;
+      border-bottom: 1px solid var(--border);
+      font-family: var(--font-h);
+      font-size: clamp(1.2rem,2.2vw,1.6rem);
+      font-weight: 300;
+      font-optical-sizing: auto;
+      color: var(--text-1);
+      line-height: 1.25;
+    }
+    .outcome-item:last-child { border-bottom: none; }
+    .outcome-num {
+      font-family: var(--font-b);
+      font-size: .55rem;
+      letter-spacing: .2em;
+      color: var(--holistic-accent);
+      text-transform: uppercase;
+      flex-shrink: 0;
+      min-width: 2rem;
+    }
+
+    /* ================================================================
+       HOLISTIC — 1:1: IS THIS FOR YOU?
+    ================================================================ */
+    .holistic-qualifier {
+      padding: clamp(4rem,9vw,7rem) 0;
+      background: #0d100d;
+      border-top: 1px solid var(--border);
+    }
+    .qualifier-inner { max-width: 680px; }
+    .qualifier-text {
+      font-size: clamp(.9rem,1.5vw,1.05rem);
+      color: var(--text-2);
+      line-height: 1.85;
+      margin-top: 1.5rem;
+    }
+
+    /* ================================================================
+       HOLISTIC — 1:1: CLARITY CALL CTA
+    ================================================================ */
+    .holistic-clarity {
+      padding: clamp(5rem,10vw,8rem) 0;
+      background: var(--holistic-bg);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    .clarity-inner { max-width: 580px; margin: 0 auto; padding: 0 clamp(1rem,4vw,2.5rem); }
+    .clarity-desc {
+      font-size: clamp(.875rem,1.4vw,.975rem);
+      color: var(--text-2);
+      line-height: 1.78;
+      margin: 1.5rem auto 2.5rem;
+      max-width: 50ch;
+    }
+    .clarity-cta-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    .testimonials-link {
+      font-size: .62rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--text-3);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      transition: color .2s;
+    }
+    .testimonials-link:hover { color: var(--holistic-light); }
+    .testimonials-link:focus-visible { outline: 1px solid var(--holistic-accent); outline-offset: 3px; }
+
+    /* ================================================================
        HOLISTIC — GROUP EXPERIENCES
     ================================================================ */
     .holistic-experiences { padding: clamp(4rem,9vw,7rem) 0; background: #0a0a0a; }
@@ -1054,8 +1259,11 @@
       #landing:has(.split--holistic:hover) .split--holistic { flex: 1.35; }
       #landing:has(.split--holistic:hover) .split--music    { flex: 0.65; }
 
-      .bio-grid   { grid-template-columns: 1fr; }
-      .about-grid { grid-template-columns: 1fr; }
+      .bio-grid    { grid-template-columns: 1fr; }
+      .about-grid  { grid-template-columns: 1fr; }
+      .offer-layout{ grid-template-columns: 1fr; }
+      .offer-sticky{ position: static; }
+      .how-grid    { grid-template-columns: 1fr; }
       .photo-wrap { max-height: 420px; }
 
       .rider-grid     { grid-template-columns: repeat(2,1fr); }
@@ -1569,10 +1777,11 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="holistic-nav" role="list">
-      <li><a href="#h-services" onclick="closeBurger()">Services</a></li>
-      <li><a href="#h-philosophy" onclick="closeBurger()">Philosophy</a></li>
+      <li><a href="#h-for" onclick="closeBurger()">1:1 Coaching</a></li>
+      <li><a href="#h-how" onclick="closeBurger()">How I Work</a></li>
+      <li><a href="#h-clarity" onclick="closeBurger()">Clarity Call</a></li>
       <li><a href="#h-about" onclick="closeBurger()">About</a></li>
-      <li><a href="#h-experiences" onclick="closeBurger()">Experiences</a></li>
+      <li><a href="#h-experiences" onclick="closeBurger()">Group Experiences</a></li>
       <li><a href="#h-contact" onclick="closeBurger()">Contact</a></li>
     </ul>
   </nav>
@@ -1581,86 +1790,136 @@
   <section class="holistic-hero" id="h-hero" aria-labelledby="h-hero-h1">
     <div class="holistic-hero-inner">
       <div class="hero-eyebrow reveal" style="color:var(--holistic-accent)">
-        <span class="label label--holistic">Holistic Coaching</span>
+        <span class="label label--holistic">1:1 Coaching</span>
       </div>
       <!-- [EDIT: HOLISTIC-HERO-HEADING] -->
       <h1 class="display holistic-hero-h1 reveal d1" id="h-hero-h1">
-        Get out of your head,<br>into your body,<br>connect to your heart.
+        Slow Down<span class="accent-period">.</span>
       </h1>
       <!-- [EDIT: HOLISTIC-HERO-TAGLINE] -->
       <p class="holistic-hero-tag reveal d2">
-        Transformational coach helping people enjoy a fulfilling life with better health, greater peace of mind and deeper connections.
+        My 1:1 Coaching Programs Can Help You Get in Touch With What's Really Important.
       </p>
-      <!-- [EDIT: HOLISTIC-OFFERING-TAGS] -->
-      <div class="offering-tags reveal d3" aria-label="Modalities offered">
-        <span class="offering-tag">Coaching</span>
-        <span class="offering-tag">Yoga</span>
-        <span class="offering-tag">Qigong</span>
-        <span class="offering-tag">Cacao Ceremony</span>
-        <span class="offering-tag">Ecstatic Dance</span>
-        <span class="offering-tag">Meditation</span>
-        <span class="offering-tag">Men's Circle</span>
-        <span class="offering-tag">Retreats</span>
-      </div>
       <!-- [EDIT: HOLISTIC-HERO-CTAS] -->
-      <div class="cta-row reveal d4">
-        <a href="#h-contact" class="btn btn-hp">Work With Niko</a>
-        <a href="#h-services" class="btn btn-ho">Explore Services</a>
+      <div class="cta-row reveal d3">
+        <a href="#h-clarity" class="btn btn-hp">Book a Free Clarity Call</a>
+        <a href="#h-for" class="btn btn-ho">Is This For You?</a>
+      </div>
+      <blockquote class="hero-osho reveal d4">
+        "The real question is not whether life exists after death. The real question is whether you are alive before death."
+        <cite>— Osho</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- HOLISTIC: Who This Is For -->
+  <section class="holistic-for" id="h-for" aria-labelledby="h-for-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">Who This Is For</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-for-h2">Does Any of This<br>Sound Familiar?</h2>
+      </div>
+      <div class="for-questions">
+        <p class="for-question reveal d1">You're functioning, showing up, getting things done — but part of you feels exhausted and disconnected.</p>
+        <p class="for-question reveal d2">Have you been pushing through for years and reached a point where your nervous system just can't anymore?</p>
+        <p class="for-question reveal d3">Are you craving clarity, real connection, and a deeper sense of inner peace — not just the next goal?</p>
       </div>
     </div>
   </section>
 
-  <!-- HOLISTIC: Services -->
-  <section class="holistic-services" id="h-services" aria-labelledby="h-services-h2">
+  <!-- HOLISTIC: What I Offer -->
+  <section class="holistic-offer" id="h-offer" aria-labelledby="h-offer-h2">
     <div class="container">
       <div class="section-head reveal">
-        <p class="label label--holistic">Offerings</p>
-        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-services-h2">Services</h2>
+        <p class="label label--holistic">What I Offer</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-offer-h2">1:1 Coaching Programs</h2>
       </div>
-      <div class="services-grid">
+      <div class="offer-layout">
+        <div class="offer-sticky reveal d1">
+          <p class="label label--holistic" style="margin-bottom:1rem">Areas of Work</p>
+          <div class="how-methods">
+            <div class="how-method">Burnout Recovery &amp; Prevention</div>
+            <div class="how-method">Relationship Coaching</div>
+            <div class="how-method">Body–Mind Coaching</div>
+            <div class="how-method">Transformational Coaching</div>
+            <div class="how-method">Psychedelic Integration Coaching</div>
+          </div>
+        </div>
+        <div class="offer-prose reveal d2">
+          <p>For those in the depths of burnout — or those who can feel it building — I offer a grounded space to slow down, recover, and rebuild from a place of genuine strength rather than performance. <strong>Burnout Recovery &amp; Prevention</strong> work goes beyond rest; it involves understanding the patterns and beliefs that drove you there in the first place.</p>
+          <p><strong>Relationship Coaching</strong> explores the full spectrum of how you relate — to partners, to family, to yourself. Whether you're navigating a difficult dynamic, a transition, or simply a longing for deeper intimacy and honesty in your connections, this is a space to look clearly and move forward with more awareness.</p>
+          <p>Through <strong>Body–Mind Coaching</strong>, we integrate somatic awareness into the work — because the body holds what the mind alone cannot resolve. This draws on breath, movement, and nervous system tools to create real, felt shifts rather than intellectual understanding alone.</p>
+          <p><strong>Transformational Coaching</strong> is the container for all of it: accompanying deep processes of change, helping you move from who you've been to who you're becoming. This is not about fixing — it's about uncovering what was always there.</p>
+          <p>For those who have worked with plant medicines or psychedelics and are seeking support in integrating the experiences, <strong>Psychedelic Integration Coaching</strong> offers a careful, informed space to make sense of what arose and bring it meaningfully into daily life.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- [EDIT: SERVICE-1] -->
-        <article class="service-card reveal d1">
-          <div class="svc-num" aria-hidden="true">01</div>
-          <h3 class="svc-title">Transformational Coaching</h3>
-          <p class="svc-desc">One-on-one sessions that go beyond goal-setting — exploring depth together for lasting change from the inside out.</p>
-        </article>
+  <!-- HOLISTIC: How I Work -->
+  <section class="holistic-how" id="h-how" aria-labelledby="h-how-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">How I Work</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-how-h2">Action &amp; Being,<br>Both</h2>
+      </div>
+      <div class="how-grid">
+        <div class="reveal d1">
+          <p class="how-prose">My greatest strength as a coach is that I can be both action-oriented and being-oriented. I can explore your depth with you, accompanying a process of profound insight and transformation — and I can also be very hands-on, making things concrete and tangible, supporting action to achieve real change.</p>
+        </div>
+        <div class="reveal d2">
+          <p class="how-method-label">What we draw on</p>
+          <div class="how-methods">
+            <div class="how-method">Deep Coaching &amp; Guidance</div>
+            <div class="how-method">Somatic Tools &amp; Voice Work</div>
+            <div class="how-method">Nervous System Regulation</div>
+            <div class="how-method">Psychedelic Integration</div>
+            <div class="how-method">Accountability &amp; Mentoring</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <!-- [EDIT: SERVICE-2] -->
-        <article class="service-card reveal d2">
-          <div class="svc-num" aria-hidden="true">02</div>
-          <h3 class="svc-title">Men's Circle</h3>
-          <p class="svc-desc">A brave space where men come together to share authentically and reconnect with their deeper selves and purpose.</p>
-        </article>
+  <!-- HOLISTIC: Outcomes -->
+  <section class="holistic-outcomes" id="h-outcomes" aria-labelledby="h-outcomes-h2">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="label label--holistic">What Becomes Possible</p>
+        <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-outcomes-h2">Outcomes</h2>
+      </div>
+      <ol class="outcomes-list" aria-label="Coaching outcomes">
+        <li class="outcome-item reveal d1"><span class="outcome-num" aria-hidden="true">01</span>Embodied, authentic &amp; confident self</li>
+        <li class="outcome-item reveal d2"><span class="outcome-num" aria-hidden="true">02</span>Greater clarity &amp; grounded decision-making</li>
+        <li class="outcome-item reveal d3"><span class="outcome-num" aria-hidden="true">03</span>Increased self-love</li>
+        <li class="outcome-item reveal d4"><span class="outcome-num" aria-hidden="true">04</span>Inner peace &amp; deep rest</li>
+        <li class="outcome-item reveal d5"><span class="outcome-num" aria-hidden="true">05</span>Healthier relationships — to self and others</li>
+      </ol>
+    </div>
+  </section>
 
-        <!-- [EDIT: SERVICE-3] -->
-        <article class="service-card reveal d3">
-          <div class="svc-num" aria-hidden="true">03</div>
-          <h3 class="svc-title">Cacao Ceremonies</h3>
-          <p class="svc-desc">Sacred plant medicine gatherings with music, movement and meditation — open the heart within a held container.</p>
-        </article>
+  <!-- HOLISTIC: Is This For You? -->
+  <section class="holistic-qualifier" id="h-qualifier" aria-labelledby="h-qualifier-h2">
+    <div class="container">
+      <div class="qualifier-inner">
+        <div class="reveal">
+          <p class="label label--holistic">An Honest Note</p>
+          <h2 class="display" style="font-size:clamp(2rem,4.5vw,3.75rem);margin-top:.5rem" id="h-qualifier-h2">Is This For You?</h2>
+        </div>
+        <p class="qualifier-text reveal d1">This is only for you if you are willing and ready to go deeper. If you're looking to achieve surface-level goals — make more money, get more dates, get fitter — there are other coaches for you. This is for you if you've already tried the success, the adventure, and are ready to start looking for fulfilment within.</p>
+      </div>
+    </div>
+  </section>
 
-        <!-- [EDIT: SERVICE-4] -->
-        <article class="service-card reveal d1">
-          <div class="svc-num" aria-hidden="true">04</div>
-          <h3 class="svc-title">Ecstatic Dance</h3>
-          <p class="svc-desc">Free-form, music-guided dance journeys that release stress, unlock joy and move energy through the body.</p>
-        </article>
-
-        <!-- [EDIT: SERVICE-5] -->
-        <article class="service-card reveal d2">
-          <div class="svc-num" aria-hidden="true">05</div>
-          <h3 class="svc-title">Yoga &amp; Qigong</h3>
-          <p class="svc-desc">Body-mind practices drawn from Hatha-Vinyasa yoga and YOQI Qigong — cultivating energy, flow and somatic awareness.</p>
-        </article>
-
-        <!-- [EDIT: SERVICE-6] -->
-        <article class="service-card reveal d3">
-          <div class="svc-num" aria-hidden="true">06</div>
-          <h3 class="svc-title">Retreats &amp; Festivals</h3>
-          <p class="svc-desc">Multi-day immersions and festival workshops — spaces for deep rest, celebration and community in nature.</p>
-        </article>
-
+  <!-- HOLISTIC: Free Clarity Call CTA -->
+  <section class="holistic-clarity" id="h-clarity" aria-labelledby="h-clarity-h2">
+    <div class="clarity-inner">
+      <p class="label label--holistic reveal">Ready to Begin?</p>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,4.5rem);margin-top:.5rem" id="h-clarity-h2">Book a Free<br>Clarity Call</h2>
+      <p class="clarity-desc reveal d1">A free 45-minute session — part conversation, part mini coaching. We get to know each other and find out whether we're a good match. I won't try to sell anything.</p>
+      <div class="clarity-cta-group reveal d2">
+        <a href="#h-contact" class="btn btn-hp">Get In Touch</a>
+        <a href="https://www.linkedin.com/in/nikoboholistic/details/recommendations/" target="_blank" rel="noopener noreferrer" class="testimonials-link">Read testimonials on LinkedIn →</a>
       </div>
     </div>
   </section>

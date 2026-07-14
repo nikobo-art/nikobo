@@ -19,7 +19,8 @@ const spa = new Set(['/music', '/coaching']);
 http.createServer((req, res) => {
   const pathname = decodeURIComponent(req.url.split('?')[0]);
   const target = (pathname === '/' || spa.has(pathname)) ? 'index.html' : pathname;
-  const filePath = path.join(__dirname, target);
+  let filePath = path.join(__dirname, target);
+  if (!path.extname(filePath)) filePath = path.join(filePath, 'index.html'); // dir stubs (/coaching/1on1 …)
   const ext = path.extname(filePath);
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(err.code === 'ENOENT' ? 404 : 500); res.end(); return; }
